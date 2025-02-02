@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://duym3hrtrsu7n"]
+
+[ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="1_e33kb"]
+
+[resource]
+texture = ExtResource("1_e33kb")
+region_rect = Rect2(25, 25, 46, 46)

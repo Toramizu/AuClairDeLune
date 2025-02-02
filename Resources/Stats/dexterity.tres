@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatDefinition" load_steps=2 format=3 uid="uid://4jdcqgho7jjm"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/stat_definition.gd" id="1_2ryvs"]
+
+[resource]
+script = ExtResource("1_2ryvs")
+id = "Dex"
+fullname = "Dexterity"
+type = "Body"
+color = Color(0.443137, 0.921569, 0.203922, 1)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatDefinition" load_steps=2 format=3 uid="uid://bjnmseqax7l57"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/stat_definition.gd" id="1_mahgh"]
+
+[resource]
+script = ExtResource("1_mahgh")
+id = "Int"
+fullname = "Intelligence"
+type = "Mind"
+color = Color(0.203922, 0.764706, 0.921569, 1)

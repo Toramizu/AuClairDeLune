@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatDefinition" load_steps=2 format=3 uid="uid://cyi5yo8gvpwmp"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/stat_definition.gd" id="1_6bt6p"]
+
+[resource]
+script = ExtResource("1_6bt6p")
+id = "Str"
+fullname = "Strength"
+type = "Body"
+color = Color(0.921569, 0.25098, 0.203922, 1)
