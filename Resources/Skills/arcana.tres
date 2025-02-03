@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillDefinition" load_steps=2 format=3 uid="uid://c7dqmv8behjuq"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/skill_definition.gd" id="1_1tl57"]
+
+[resource]
+script = ExtResource("1_1tl57")
+id = "Arc"
+fullname = "Arcana"
+type = "Field"
+stat = "Int"

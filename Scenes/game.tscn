@@ -23,6 +23,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Player" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_n8psg")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -196,7 +200,3 @@ patch_margin_right = 33
 patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-
-[node name="Player" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("7_n8psg")

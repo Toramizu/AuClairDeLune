@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1738540040
+::res://::1738549192
+icon.svg::CompressedTexture2D::1119568351895972694::1738367343::1738541997::1::::<><>::
 ::res://Assets/::1738462913
 ::res://Assets/Asset Packs/::1738469099
 ::res://Assets/Asset Packs/Kenney/::1738539961
@@ -439,26 +440,34 @@ GreenBar.png::CompressedTexture2D::86900242522484822::1738459606::1738539961::1:
 PinkBar.png::CompressedTexture2D::5277464028005599597::1738460474::1738539961::1::::<><>::
 RedBar.png::CompressedTexture2D::6748153726758044334::1738459883::1738539961::1::::<><>::
 YellowBar.png::CompressedTexture2D::2222469388777225973::1738459883::1738539961::1::::<><>::
-::res://Resources/::1738538612
-::res://Resources/Stats/::1738538742
+::res://Resources/::1738540961
+::res://Resources/Characters/::1738541835
+player.tres::Resource/CharacterDefinition::8764939663638228805::1738541835::0::1::::<><>::res://Scripts/Characters/character_definition.gd
+TestChara.tres::Resource/CharacterDefinition::2185281368317321687::1738541346::0::1::::<><>::res://Scripts/Characters/character_definition.gd
+::res://Resources/Skills/::1738540345
+arcana.tres::Resource/SkillDefinition::7026071552496505652::1738540345::0::1::::<><>::res://Scripts/Characters/skill_definition.gd
+::res://Resources/Stats/::1738540262
 charm.tres::Resource/StatDefinition::2860176177499391563::1738538742::0::1::::<><>::res://Scripts/Characters/stat_definition.gd
 constitution.tres::Resource/StatDefinition::4298669458034226472::1738538742::0::1::::<><>::res://Scripts/Characters/stat_definition.gd
 dexterity.tres::Resource/StatDefinition::2054242437836040226::1738538742::0::1::::<><>::res://Scripts/Characters/stat_definition.gd
 intelligence.tres::Resource/StatDefinition::3045718170283933752::1738538742::0::1::::<><>::res://Scripts/Characters/stat_definition.gd
 strength.tres::Resource/StatDefinition::6475753792174907719::1738538742::0::1::::<><>::res://Scripts/Characters/stat_definition.gd
 willpower.tres::Resource/StatDefinition::8381718414139071291::1738538742::0::1::::<><>::res://Scripts/Characters/stat_definition.gd
-::res://Scenes/::1738540016
-game.tscn::PackedScene::1828540545871972721::1738540016::0::1::::<><>::uid://stfy2ltwq5bl::::res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png<>res://Scripts/UI/hp_display.gd<>uid://bmv8b3rmesbci::::res://Assets/UI/Bars/EmptyBar.png<>res://Scripts/UI/player_sheet.gd<>uid://bidh73360j47::::res://Assets/UI/Bars/GreenBar.png<>uid://bldsclyiut4i6::::res://Assets/UI/Bars/BlueBar.png<>res://Scripts/UI/mp_display.gd<>uid://chgpcdc714yhx::::res://Assets/UI/Bars/PinkBar.png<>res://Scripts/player_character.gd<>res://Scripts/UI/ap_display.gd<>uid://1sdy8trpshw3::::res://Assets/Asset Packs/TTrpg Legacy/treasures/gold_coin.png
+::res://Scenes/::1738549544
+game.tscn::PackedScene::1828540545871972721::1738549873::0::1::::<><>::uid://stfy2ltwq5bl::::res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png<>res://Scripts/UI/hp_display.gd<>uid://bmv8b3rmesbci::::res://Assets/UI/Bars/EmptyBar.png<>res://Scripts/UI/player_sheet.gd<>uid://bidh73360j47::::res://Assets/UI/Bars/GreenBar.png<>uid://bldsclyiut4i6::::res://Assets/UI/Bars/BlueBar.png<>res://Scripts/UI/mp_display.gd<>uid://chgpcdc714yhx::::res://Assets/UI/Bars/PinkBar.png<>res://Scripts/player_character.gd<>res://Scripts/UI/ap_display.gd<>uid://1sdy8trpshw3::::res://Assets/Asset Packs/TTrpg Legacy/treasures/gold_coin.png
 ::res://Scenes/UI/::1738539003
 stat_label.tscn::PackedScene::6784888832122695223::1738539003::0::1::::<><>::uid://bpjw4v4pstm86::::res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Default/Transparent center/panel-transparent-center-001.png<>res://Scripts/UI/stat_label.gd
-::res://Scripts/::1738538928
-database.gd::GDScript::-1::1738538928::0::1::::<>Node<>::
-player_character.gd::GDScript::-1::1738468768::0::1::::PlayerCharacter<>Node<>::
-::res://Scripts/Characters/::1738538920
+::res://Scripts/::1738549544
+database.gd::GDScript::-1::1738541730::0::1::::<>Node<>::
+player_character.gd::GDScript::-1::1738549873::0::1::::PlayerCharacter<>Node<>::
+tools.gd::GDScript::-1::1738549168::0::1::::<>Node<>::
+::res://Scripts/Characters/::1738548800
+character_definition.gd::GDScript::-1::1738548800::0::1::::CharacterDefinition<>Resource<>::
+skill_definition.gd::GDScript::-1::1738540329::0::1::::SkillDefinition<>Resource<>::
 stat_definition.gd::GDScript::-1::1738538585::0::1::::StatDefinition<>Resource<>::
-::res://Scripts/UI/::1738538910
+::res://Scripts/UI/::1738542624
 ap_display.gd::GDScript::-1::1738461140::0::1::::<>MarginContainer<>::
 hp_display.gd::GDScript::-1::1738461140::0::1::::<>MarginContainer<>::
 mp_display.gd::GDScript::-1::1738461147::0::1::::<>MarginContainer<>::
-player_sheet.gd::GDScript::-1::1738469250::0::1::::<>NinePatchRect<>::
-stat_label.gd::GDScript::-1::1738538910::0::1::::<>Control<>::
+player_sheet.gd::GDScript::-1::1738542624::0::1::::<>NinePatchRect<>::
+stat_label.gd::GDScript::-1::1738542390::0::1::::<>Control<>::

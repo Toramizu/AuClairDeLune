@@ -1,0 +1,9 @@
+-> Check Dialogic
+-> Save & Load game
+
+
+-> How to use Stats with Skills?
+	-> If Roll <= Stat : Skill check success?
+	-> Flat bonus on rolls?
+	-> Roll for improvement? 
+		(Roll 1D20, if it's < Stat, +1 Skill; Auto +1 for every 20 Stat; Skill needs more exp at higher levels)

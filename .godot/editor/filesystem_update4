@@ -1,0 +1,12 @@
+res://Scenes/game.tscn
+res://Scripts/Characters/skill_definition.gd
+res://Scripts/database.gd
+res://Resources/Skills/arcana.tres
+res://Scripts/Characters/character_definition.gd
+res://Resources/Characters/TestChara.tres
+res://Scripts/player_character.gd
+res://Resources/Characters/player.tres
+res://Scripts/UI/player_sheet.gd
+res://Scripts/UI/stat_label.gd
+res://Scripts/tools.gd
+res://Docs/ToDo.txt
