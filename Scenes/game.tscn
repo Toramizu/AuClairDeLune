@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=15 format=3 uid="uid://1b02b0y5mec4"]
 
+[ext_resource type="Script" path="res://Scripts/debug.gd" id="1_m1nk4"]
 [ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="1_yv5s3"]
 [ext_resource type="Script" path="res://Scripts/UI/hp_display.gd" id="2_23skc"]
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="2_358bx"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/player_character.gd" id="7_n8psg"]
 [ext_resource type="Script" path="res://Scripts/UI/ap_display.gd" id="7_ngwlo"]
 [ext_resource type="Texture2D" uid="uid://1sdy8trpshw3" path="res://Assets/Asset Packs/TTrpg Legacy/treasures/gold_coin.png" id="10_3c8ao"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="13_fcl3x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dbyw1"]
 font_size = 32
@@ -22,6 +24,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Debug" type="Node" parent="."]
+script = ExtResource("1_m1nk4")
 
 [node name="Player" type="Node" parent="."]
 unique_name_in_owner = true
@@ -178,7 +183,7 @@ theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="DialoguePanel" type="NinePatchRect" parent="HBoxContainer"]
+[node name="InteractionPanel" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -190,6 +195,28 @@ patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
+[node name="Debug Button" type="Button" parent="HBoxContainer/InteractionPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -81.0
+offset_right = 104.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Dialogue"
+
+[node name="DialogueManager" type="Control" parent="HBoxContainer/InteractionPanel"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_fcl3x")
+
 [node name="InfoPanel" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -200,3 +227,5 @@ patch_margin_right = 33
 patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[connection signal="pressed" from="HBoxContainer/InteractionPanel/Debug Button" to="Debug" method="debugDialogue"]

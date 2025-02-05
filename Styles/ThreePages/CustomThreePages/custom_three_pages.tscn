@@ -1,0 +1,267 @@
+[gd_scene load_steps=19 format=3 uid="uid://dfjrn13ah6g2t"]
+
+[ext_resource type="Script" path="res://Styles/ThreePages/CustomThreePages/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="Script" path="res://Scripts/Dialogic/custom_node_dialog_text.gd" id="3_10tho"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_dfyj3"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="5_qxway"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="6_ln42p"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="6_r46pm"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="7_gr8u0"]
+[ext_resource type="Resource" path="res://Resources/Dialogue/Characters/margaret.dch" id="7_rksvh"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="8_31i3t"]
+[ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="8_m2xd5"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="8_waeij"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="11_jp6sk"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="12_t7jqg"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.gd" id="15_ilb3t"]
+[ext_resource type="PackedScene" uid="uid://cuoywrmvda1yg" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.tscn" id="16_tcem2"]
+
+[sub_resource type="AudioStream" id="AudioStream_pe27w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igmo8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.776471)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt40o"]
+font_size = 48
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerPanel" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IneractionPanel" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DialoguePanel" type="VBoxContainer" parent="HBoxContainer/IneractionPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="HBoxContainer/IneractionPanel/DialoguePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Some text"
+fit_content = true
+scroll_following = true
+visible_characters_behavior = 1
+script = ExtResource("3_10tho")
+text_size = 42
+text_color = Color(1, 1, 1, 1)
+alignment = 1
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="HBoxContainer/IneractionPanel/DialoguePanel/DialogicNode_DialogText"]
+script = ExtResource("5_dfyj3")
+
+[node name="VN_ChoiceLayer" type="Control" parent="HBoxContainer/IneractionPanel/DialoguePanel"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("11_jp6sk")
+
+[node name="Choices" type="VBoxContainer" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -47.0
+offset_right = 42.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton5" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton6" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton7" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton8" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton9" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton10" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ChoiceButton11" type="Button" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("5_qxway")
+
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="HBoxContainer/IneractionPanel/DialoguePanel/VN_ChoiceLayer/Choices"]
+unique_name_in_owner = true
+script = ExtResource("6_r46pm")
+sound_pressed = ExtResource("7_gr8u0")
+sound_hover = ExtResource("8_m2xd5")
+sound_focus = SubResource("AudioStream_pe27w")
+
+[node name="TextInputLayer" parent="HBoxContainer/IneractionPanel/DialoguePanel" instance=ExtResource("12_t7jqg")]
+layout_mode = 2
+
+[node name="ExampleHistoryScene" type="Control" parent="HBoxContainer/IneractionPanel"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("15_ilb3t")
+HistoryItem = ExtResource("16_tcem2")
+apply_overrides_on_ready = true
+
+[node name="HistoryBox" type="ScrollContainer" parent="HBoxContainer/IneractionPanel/ExampleHistoryScene"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = 65.0
+offset_right = -74.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_igmo8")
+horizontal_scroll_mode = 0
+
+[node name="HistoryLog" type="VBoxContainer" parent="HBoxContainer/IneractionPanel/ExampleHistoryScene/HistoryBox"]
+unique_name_in_owner = true
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ShowHistory" type="Button" parent="HBoxContainer/IneractionPanel/ExampleHistoryScene"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_top = 7.0
+offset_right = -9.0
+offset_bottom = 38.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "History"
+
+[node name="HideHistory" type="Button" parent="HBoxContainer/IneractionPanel/ExampleHistoryScene"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -123.0
+offset_top = 58.0
+offset_right = -62.0
+offset_bottom = 89.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Return"
+
+[node name="InfoPanel" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="InfoPanel" type="VBoxContainer" parent="HBoxContainer/InfoPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="DialogicNode_PortraitContainer" type="Control" parent="HBoxContainer/InfoPanel/InfoPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("6_ln42p")
+mode = 1
+container_ids = PackedStringArray("1")
+mirrored = true
+debug_character = ExtResource("7_rksvh")
+
+[node name="DialogicNode_NameLabel" type="Label" parent="HBoxContainer/InfoPanel/InfoPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Name"
+label_settings = SubResource("LabelSettings_bt40o")
+script = ExtResource("8_31i3t")
+
+[node name="Glossary" parent="." instance=ExtResource("8_waeij")]
+visible = false
+apply_overrides_on_ready = true
+
+[connection signal="pressed" from="HBoxContainer/IneractionPanel/ExampleHistoryScene/ShowHistory" to="HBoxContainer/IneractionPanel/ExampleHistoryScene" method="_on_show_history_pressed"]
+[connection signal="pressed" from="HBoxContainer/IneractionPanel/ExampleHistoryScene/HideHistory" to="HBoxContainer/IneractionPanel/ExampleHistoryScene" method="_on_hide_history_pressed"]
