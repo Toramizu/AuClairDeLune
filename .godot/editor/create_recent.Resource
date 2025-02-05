@@ -1,2 +1,0 @@
-CharacterDefinition
-SkillDefinition
