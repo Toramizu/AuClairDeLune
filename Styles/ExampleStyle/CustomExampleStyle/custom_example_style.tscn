@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ceq8hufcic35u"]
+[gd_scene load_steps=15 format=3 uid="uid://ceq8hufcic35u"]
 
 [ext_resource type="Script" path="res://Styles/ExampleStyle/CustomExampleStyle/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_2f2aw"]
-[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_htkon"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.gd" id="3_pkd5y"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_input.gd" id="4_keoay"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="5_w7piu"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_qn5rf"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd" id="7_qfya6"]
@@ -27,8 +28,26 @@ script = ExtResource("1_ifsho")
 [node name="BackgroundLayer" parent="." instance=ExtResource("2_2f2aw")]
 apply_overrides_on_ready = true
 
-[node name="FullAdvanceInputLayer" parent="." instance=ExtResource("4_htkon")]
+[node name="FullAdvanceInputLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_pkd5y")
 apply_overrides_on_ready = true
+
+[node name="DialogicNode_Input" type="Control" parent="FullAdvanceInputLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("4_keoay")
 
 [node name="TextboxWithSpeakerPortrait" type="Control" parent="."]
 layout_mode = 3

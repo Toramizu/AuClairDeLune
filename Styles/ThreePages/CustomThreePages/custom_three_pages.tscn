@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfjrn13ah6g2t"]
+[gd_scene load_steps=21 format=3 uid="uid://dfjrn13ah6g2t"]
 
-[ext_resource type="Script" path="res://Styles/ThreePages/CustomThreePages/default_layout_base.gd" id="1_ifsho"]
-[ext_resource type="Script" path="res://Scripts/Dialogic/custom_node_dialog_text.gd" id="3_10tho"]
+[ext_resource type="Script" path="res://Scripts/Dialogic/custom_layout_base.gd" id="1_wlcfx"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_xr6wc"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_dfyj3"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="5_qxway"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="6_ln42p"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="8_waeij"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.gd" id="9_xjad1"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/TextInput/node_text_input.gd" id="10_ux5hd"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_input.gd" id="12_i65kk"]
+[ext_resource type="LabelSettings" uid="uid://cvs3hrlq3ajm" path="res://Resources/Themes/character_name_label.tres" id="14_ul0h0"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.gd" id="15_ilb3t"]
 [ext_resource type="PackedScene" uid="uid://cuoywrmvda1yg" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.tscn" id="16_tcem2"]
 
@@ -41,11 +43,8 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="LabelSettings" id="LabelSettings_bt40o"]
-font_size = 48
-
-[node name="Custom" type="CanvasLayer"]
-script = ExtResource("1_ifsho")
+[node name="ThreePagesLayers" type="CanvasLayer"]
+script = ExtResource("1_wlcfx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -62,18 +61,24 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="DialogicNode_Input" type="Control" parent="HBoxContainer/IneractionPanel"]
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("12_i65kk")
 
 [node name="DialoguePanel" type="VBoxContainer" parent="HBoxContainer/IneractionPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+mouse_filter = 2
 alignment = 1
 
-[node name="DialogicNode_DialogText" type="RichTextLabel" parent="HBoxContainer/IneractionPanel/DialoguePanel"]
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="HBoxContainer/IneractionPanel/DialoguePanel" node_paths=PackedStringArray("textbox_root")]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
@@ -81,9 +86,9 @@ text = "[center]Some text"
 fit_content = true
 scroll_following = true
 visible_characters_behavior = 1
-script = ExtResource("3_10tho")
-text_color = Color(1, 1, 1, 1)
+script = ExtResource("3_xr6wc")
 alignment = 1
+textbox_root = NodePath("..")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="HBoxContainer/IneractionPanel/DialoguePanel/DialogicNode_DialogText"]
 script = ExtResource("5_dfyj3")
@@ -275,10 +280,10 @@ text = "Return"
 [node name="InfoPanel" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="InfoPanel" type="VBoxContainer" parent="HBoxContainer/InfoPanel"]
 layout_mode = 2
@@ -298,9 +303,10 @@ debug_character = ExtResource("7_rksvh")
 [node name="DialogicNode_NameLabel" type="Label" parent="HBoxContainer/InfoPanel/InfoPanel"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "Name"
-label_settings = SubResource("LabelSettings_bt40o")
+label_settings = ExtResource("14_ul0h0")
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("8_31i3t")
 
 [node name="Glossary" parent="." instance=ExtResource("8_waeij")]

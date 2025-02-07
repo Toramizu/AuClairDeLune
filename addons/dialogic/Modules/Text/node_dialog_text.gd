@@ -60,7 +60,7 @@ func reveal_text(_text: String, keep_previous:=false) -> void:
 	show()
 
 	if !keep_previous:
-		text = '[font_size={42}]' + _text
+		text = _text
 		base_visible_characters = 0
 
 		if alignment == Alignment.CENTER:

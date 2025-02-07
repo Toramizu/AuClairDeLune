@@ -1,8 +1,7 @@
 -> Save & Load game
 
 -> Dialogic
-	-> Scale UI with screen size
-	-> Global Font Size
+	-> Continue dialogue only when clicking center Panel
 
 -> How to use Stats with Skills?
 	-> If Roll <= Stat : Skill check success?

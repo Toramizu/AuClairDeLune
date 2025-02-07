@@ -4,12 +4,11 @@
 [ext_resource type="Script" path="res://Scripts/UI/stat_label.gd" id="1_ordoh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hn7ma"]
-font_size = 24
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="StatLabel" type="NinePatchRect" node_paths=PackedStringArray("label")]
-custom_minimum_size = Vector2(100, 40)
+custom_minimum_size = Vector2(75, 25)
 offset_right = 80.0
 offset_bottom = 40.0
 texture = ExtResource("1_le7sx")

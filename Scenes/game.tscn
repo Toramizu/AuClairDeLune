@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=16 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Script" path="res://Scripts/debug.gd" id="1_m1nk4"]
 [ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="1_yv5s3"]
@@ -9,13 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://bldsclyiut4i6" path="res://Assets/UI/Bars/BlueBar.png" id="4_dux86"]
 [ext_resource type="Script" path="res://Scripts/UI/mp_display.gd" id="5_fjspr"]
 [ext_resource type="Texture2D" uid="uid://chgpcdc714yhx" path="res://Assets/UI/Bars/PinkBar.png" id="5_mkj8l"]
+[ext_resource type="LabelSettings" uid="uid://cvs3hrlq3ajm" path="res://Resources/Themes/character_name_label.tres" id="6_2ls7f"]
 [ext_resource type="Script" path="res://Scripts/player_character.gd" id="7_n8psg"]
 [ext_resource type="Script" path="res://Scripts/UI/ap_display.gd" id="7_ngwlo"]
 [ext_resource type="Texture2D" uid="uid://1sdy8trpshw3" path="res://Assets/Asset Packs/TTrpg Legacy/treasures/gold_coin.png" id="10_3c8ao"]
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="13_fcl3x"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_dbyw1"]
-font_size = 32
+[ext_resource type="Theme" uid="uid://cexayfkfkdx02" path="res://Resources/Themes/default_theme.tres" id="13_pidnf"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -24,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("13_pidnf")
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("1_m1nk4")
@@ -66,13 +66,13 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 5
 
 [node name="NameLabel" type="Label" parent="HBoxContainer/PlayerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Luna Moonlit"
-label_settings = SubResource("LabelSettings_dbyw1")
+label_settings = ExtResource("6_2ls7f")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -179,8 +179,8 @@ vertical_alignment = 1
 
 [node name="StatsContainer" type="HFlowContainer" parent="HBoxContainer/PlayerPanel/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 50
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 5
 alignment = 1
 
 [node name="InteractionPanel" type="NinePatchRect" parent="HBoxContainer"]
@@ -208,6 +208,7 @@ offset_right = 104.0
 offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("13_pidnf")
 text = "Start Dialogue"
 
 [node name="DialogueManager" type="Control" parent="HBoxContainer/InteractionPanel"]
