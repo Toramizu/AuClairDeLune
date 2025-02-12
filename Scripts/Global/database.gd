@@ -3,6 +3,7 @@ extends Node
 var characters : Dictionary
 var skills : Dictionary
 var stats : Dictionary
+var i : int
 
 func _ready():
 	var path = "res://Resources/Stats/"

@@ -5,7 +5,6 @@ extends MarginContainer
 
 
 func _ready():
-	var player = %Player
-	mp_bar.max_value = player.max_mp
-	mp_bar.value = player.mp
-	mp_label.text = "HP: %d/%d" % [player.mp, player.max_mp]
+	mp_bar.max_value = Player.max_mp
+	mp_bar.value = Player.mp
+	mp_label.text = "HP: %d/%d" % [Player.mp, Player.max_mp]

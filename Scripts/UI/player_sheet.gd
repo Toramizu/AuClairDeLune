@@ -7,11 +7,10 @@ extends NinePatchRect
 var stat_preload = preload("res://Scenes/UI/stat_label.tscn")
 
 func _ready():
-	var player = %Player
 	var statsDB = Database.stats
-	name_label.text = "%s %s" % [player.first_name, player.last_name]
-	for stat_key in player.stats:
+	name_label.text = "%s %s" % [Player.first_name, Player.last_name]
+	for stat_key in Player.stats:
 		var stat := stat_preload.instantiate()
-		stat.initialize(statsDB[stat_key], player.stats[stat_key])
+		stat.initialize(statsDB[stat_key], Player.stats[stat_key])
 		stats_container.add_child(stat)
-	gold_label.text = "%d" % [player.gold]
+	gold_label.text = "%d" % [Player.gold]

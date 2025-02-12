@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=17 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Script" path="res://Scripts/debug.gd" id="1_m1nk4"]
 [ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="1_yv5s3"]
@@ -6,15 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="2_358bx"]
 [ext_resource type="Script" path="res://Scripts/UI/player_sheet.gd" id="2_t0bri"]
 [ext_resource type="Texture2D" uid="uid://bidh73360j47" path="res://Assets/UI/Bars/GreenBar.png" id="3_0omhn"]
+[ext_resource type="Resource" uid="uid://bod04rq0vv65w" path="res://Resources/Dialogue/dialogue.dialogue" id="3_3v8f7"]
 [ext_resource type="Texture2D" uid="uid://bldsclyiut4i6" path="res://Assets/UI/Bars/BlueBar.png" id="4_dux86"]
 [ext_resource type="Script" path="res://Scripts/UI/mp_display.gd" id="5_fjspr"]
 [ext_resource type="Texture2D" uid="uid://chgpcdc714yhx" path="res://Assets/UI/Bars/PinkBar.png" id="5_mkj8l"]
 [ext_resource type="LabelSettings" uid="uid://cvs3hrlq3ajm" path="res://Resources/Themes/character_name_label.tres" id="6_2ls7f"]
-[ext_resource type="Script" path="res://Scripts/player_character.gd" id="7_n8psg"]
 [ext_resource type="Script" path="res://Scripts/UI/ap_display.gd" id="7_ngwlo"]
 [ext_resource type="Texture2D" uid="uid://1sdy8trpshw3" path="res://Assets/Asset Packs/TTrpg Legacy/treasures/gold_coin.png" id="10_3c8ao"]
-[ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="13_fcl3x"]
 [ext_resource type="Theme" uid="uid://cexayfkfkdx02" path="res://Resources/Themes/default_theme.tres" id="13_pidnf"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/interaction_manager.gd" id="14_xr6a5"]
+
+[sub_resource type="GDScript" id="GDScript_udh05"]
+script/source = "extends Control
+
+func _ready():
+	#Dialogic.signal_event.connect(dialogue_signal_manager)
+	return
+
+func start_dialogue(dialogue: String):
+	#Dialogic.start(dialogue)
+	print(dialogue)
+
+func dialogue_signal_manager(arg):
+	print(arg)
+"
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -27,10 +42,7 @@ theme = ExtResource("13_pidnf")
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("1_m1nk4")
-
-[node name="Player" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("7_n8psg")
+dialogue_resource = ExtResource("3_3v8f7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -216,7 +228,7 @@ unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("13_fcl3x")
+script = SubResource("GDScript_udh05")
 
 [node name="InfoPanel" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
@@ -228,5 +240,9 @@ patch_margin_right = 33
 patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[node name="InteractionManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("14_xr6a5")
 
 [connection signal="pressed" from="HBoxContainer/InteractionPanel/Debug Button" to="Debug" method="debugDialogue"]

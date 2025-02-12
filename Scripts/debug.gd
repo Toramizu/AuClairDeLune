@@ -1,8 +1,10 @@
 extends Node
 
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = "start"
+
 func debugDialogue():
-	print("Debug Dialogue!")
-	%DialogueManager.start_dialogue("margaretIntro")
+	%InteractionManager.start_dialogue(dialogue_resource, dialogue_start)
 	
 func endDebugDialogue():
 	print("Debug Dialogue Complete!")

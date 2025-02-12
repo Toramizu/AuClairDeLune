@@ -5,7 +5,6 @@ extends MarginContainer
 
 
 func _ready():
-	var player = %Player
-	hp_bar.max_value = player.max_hp
-	hp_bar.value = player.hp
-	hp_label.text = "HP: %d/%d" % [player.hp, player.max_hp]
+	hp_bar.max_value = Player.max_hp
+	hp_bar.value = Player.hp
+	hp_label.text = "HP: %d/%d" % [Player.hp, Player.max_hp]
