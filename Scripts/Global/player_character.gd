@@ -1,12 +1,14 @@
 extends Node
 
-var hp : int = 90
-var mp : int = 50
-var ap : int = 10
+const player_def: PlayerDefinition = preload("res://Resources/Players/player.tres")
 
-var gold : int = 240
+var hp : int
+var mp : int
+var ap : int
 
-var character : CharacterDefinition
+var gold : int
+
+var character : PlayerDefinition
 
 var first_name : String :
 	get:
@@ -33,7 +35,11 @@ var max_ap : int :
 
 
 func _ready():
-	character = Database.characters["Player"]
+	character = player_def
+	hp = character.max_hp
+	mp = character.max_mp
+	ap = character.max_ap
+	gold = character.starting_gold
 
 func get_stat(stat: String) -> int:
 	if character.stats.has(stat):

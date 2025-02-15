@@ -8,3 +8,6 @@ func debugDialogue():
 	
 func endDebugDialogue():
 	print("Debug Dialogue Complete!")
+
+func ding():
+	print("Ding")

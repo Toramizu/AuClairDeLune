@@ -1,6 +1,5 @@
 extends Node
 
-var characters : Dictionary
 var skills : Dictionary
 var stats : Dictionary
 var i : int
@@ -17,9 +16,3 @@ func _ready():
 		var skill = load(path + filePath)
 		if skill.id:
 			skills[skill.id] = skill
-			
-	path = "res://Resources/Characters/"
-	for filePath in DirAccess.get_files_at(path):
-		var chara = load(path + filePath)
-		if chara.id:
-			characters[chara.id] = chara

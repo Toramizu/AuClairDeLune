@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends Control
 
 @export var name_label : Label
 @export var stats_container : Container

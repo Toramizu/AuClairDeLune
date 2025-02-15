@@ -1,0 +1,60 @@
+Characters
+	PlayerCharacter : Character
+		-> Resource
+			-> Health
+			-> Mana
+			-> AR
+	
+	NPC : Character
+		-> Relationship
+	
+	Character
+		-> First Name
+		-> Last Name
+		-> Image
+		
+		-> Stats[]
+		-> Skills[]
+		
+		-> Tags[]
+
+	Stat
+		-> ID
+		-> Name
+		-> Icon
+		-> Color
+		-> Type (Body, Mind)
+
+	Skill
+		-> ID
+		-> Name
+		-> Icon
+		
+		-> Stat
+
+Locations
+	Town
+		-> ID
+		-> Name
+		-> Background
+		-> Locations-Position{}
+	
+	Location
+		-> ID
+		-> Name
+		-> Icon
+		-> Condition
+		-> Default Event
+
+Events
+	Event Manager
+		-> Night Events[]
+		-> Location-Event{}
+	
+	Event
+		-> ID
+		-> Condition
+		-> Locations[]
+		-> IsNight : bool
+		-> Priority
+		-> Dialogue
