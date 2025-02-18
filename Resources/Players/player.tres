@@ -7,9 +7,7 @@ script = ExtResource("1_ccj6r")
 max_hp = 100
 max_mp = 100
 max_ap = 100
-currencies = {
-"Gold": 5
-}
+starting_gold = 5
 id = "player"
 first_name = "Luna"
 last_name = "Moonlight"

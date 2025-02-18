@@ -6,8 +6,5 @@ extends Node
 func debugDialogue():
 	%InteractionManager.start_dialogue(dialogue_resource, dialogue_start)
 	
-func endDebugDialogue():
-	print("Debug Dialogue Complete!")
-
 func ding():
 	print("Ding")

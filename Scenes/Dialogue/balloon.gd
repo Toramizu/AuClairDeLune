@@ -31,8 +31,7 @@ var dialogue_line: DialogueLine:
 			dialogue_line = value
 			apply_dialogue_line()
 		else:
-			# The dialogue has finished so close the balloon
-			queue_free()
+			end_dialogue()
 	get:
 		return dialogue_line
 
@@ -138,6 +137,10 @@ func apply_dialogue_line() -> void:
 func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
 
+func end_dialogue() -> void:
+	# The dialogue has finished so close the balloon
+	queue_free()
+	SignalBus.end_dialogue.emit()
 
 #region Signals
 

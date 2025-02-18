@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="LocationDefinition" load_steps=6 format=3 uid="uid://dkw2fy04hfsyx"]
+
+[ext_resource type="Texture2D" uid="uid://bnv31t6y1j02a" path="res://Assets/Location Backgrounds/forest.webp" id="1_1tkwk"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Locations/location_definition.gd" id="1_dsimd"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Locations/sublocation_definition.gd" id="3_u0y0e"]
+[ext_resource type="Resource" uid="uid://bod04rq0vv65w" path="res://Resources/Dialogue/dialogue.dialogue" id="4_bfgcy"]
+
+[sub_resource type="Resource" id="Resource_37x7u"]
+script = ExtResource("3_u0y0e")
+id = "house"
+full_name = "House"
+icon_size = Vector2i(20, 20)
+icon_position = Vector2(150, 200)
+condition = ""
+default_event = ExtResource("4_bfgcy")
+default_start = ""
+
+[resource]
+script = ExtResource("1_dsimd")
+id = "test"
+full_name = "Testing Town"
+background = ExtResource("1_1tkwk")
+sublocations = Array[ExtResource("3_u0y0e")]([SubResource("Resource_37x7u")])

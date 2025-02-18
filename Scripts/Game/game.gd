@@ -2,6 +2,8 @@ extends Node
 
 signal main_menu_requested
 
+@export var starting_location : LocationDefinition
+
 func init_game(load_data : bool):
 	if load_data:
 		load_game()
@@ -9,10 +11,11 @@ func init_game(load_data : bool):
 		new_game()
 
 func new_game():
-	print("New Game!")
+	%LocationManager.go_to_location(starting_location)
 
 func load_game():
-	print("Continue!")
+	print("Continue?")
+	new_game()
 
 func _on_escape_requested() -> void:
 	main_menu_requested.emit()

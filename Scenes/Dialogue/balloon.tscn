@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d15ysak76f2ed"]
+[gd_scene load_steps=5 format=3 uid="uid://d15ysak76f2ed"]
 
 [ext_resource type="Script" path="res://Scenes/Dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="2_2fbej"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -25,9 +26,26 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Balloon" type="MarginContainer" parent="HBoxContainer"]
-unique_name_in_owner = true
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("2_2fbej")
+patch_margin_left = 33
+patch_margin_top = 33
+patch_margin_right = 33
+patch_margin_bottom = 33
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Balloon" type="MarginContainer" parent="HBoxContainer/NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_constants/margin_left = 20
@@ -35,16 +53,16 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Balloon"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NinePatchRect/Balloon"]
 layout_mode = 2
 alignment = 1
 
-[node name="DialogueLabel" parent="HBoxContainer/Balloon/VBoxContainer" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="HBoxContainer/NinePatchRect/Balloon/VBoxContainer" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "[center]Dialogue..."
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="HBoxContainer/Balloon/VBoxContainer" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="HBoxContainer/NinePatchRect/Balloon/VBoxContainer" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
@@ -52,7 +70,7 @@ theme_override_constants/separation = 2
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 
-[node name="ResponseExample" type="Button" parent="HBoxContainer/Balloon/VBoxContainer/ResponsesMenu"]
+[node name="ResponseExample" type="Button" parent="HBoxContainer/NinePatchRect/Balloon/VBoxContainer/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
 
@@ -78,5 +96,5 @@ text = "[center]Character"
 fit_content = true
 scroll_active = false
 
-[connection signal="gui_input" from="HBoxContainer/Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="response_selected" from="HBoxContainer/Balloon/VBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="gui_input" from="HBoxContainer/NinePatchRect/Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="HBoxContainer/NinePatchRect/Balloon/VBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
