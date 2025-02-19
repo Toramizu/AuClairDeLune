@@ -11,6 +11,7 @@ starting_gold = 5
 id = "player"
 first_name = "Luna"
 last_name = "Moonlight"
+shown_name = ""
 stats = {
 "Cha": 14,
 "Con": 10,

@@ -8,7 +8,7 @@ var stat_preload = preload("res://Scenes/UI/stat_label.tscn")
 
 func _ready():
 	var statsDB = Database.stats
-	name_label.text = "[center]%s %s[/center]" % [Player.first_name, Player.last_name]
+	name_label.text = "[center]%s[/center]" % [Player.shown_name]
 	for stat_key in Player.stats:
 		var stat := stat_preload.instantiate()
 		stat.initialize(statsDB[stat_key], Player.stats[stat_key])

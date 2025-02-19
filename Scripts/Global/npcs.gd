@@ -25,4 +25,4 @@ func create_character(id: String, new_id: String, replace: bool = false):
 		active_characters[new_id] = chara
 		return chara
 	else:
-		push_error("Character %s not found" % [id])
+		push_error("Character not found :  %s" % [id])

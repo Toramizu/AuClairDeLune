@@ -1,7 +1,7 @@
 extends Node
 
-var skills : Dictionary
 var stats : Dictionary
+var skills : Dictionary
 var i : int
 
 func _ready():

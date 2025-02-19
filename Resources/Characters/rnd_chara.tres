@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RndCharacterDefinition" load_steps=3 format=3 uid="uid://1b5bgghajiv"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/rnd_character_definition.gd" id="1_4d7ji"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/stats_rnd.gd" id="2_a6v8m"]
+
+[resource]
+script = ExtResource("1_4d7ji")
+id = ""
+first_name = Array[String]([])
+last_name = Array[String]([])
+stats = Array[ExtResource("2_a6v8m")]([])
+skills = {}
+tags = Array[String]([])
+flags = {}

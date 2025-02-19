@@ -16,6 +16,10 @@ var first_name : String :
 var last_name : String :
 	get:
 		return character.last_name
+var shown_name : String :
+	get:
+		return character.shown_name
+
 var stats : Dictionary :
 	get:
 		return character.stats
@@ -35,7 +39,7 @@ var max_ap : int :
 
 
 func _ready():
-	character = player_def
+	character = player_def.duplicate()
 	hp = character.max_hp
 	mp = character.max_mp
 	ap = character.max_ap
