@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterDefinition" load_steps=2 format=3 uid="uid://beq4tjrargsx8"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/character_definition.gd" id="1_iulr6"]
+
+[resource]
+script = ExtResource("1_iulr6")
+id = "Margaret"
+first_name = "Margaret"
+last_name = "Blackblood"
+nickname = ""
+stats = {}
+skills = {}
+tags = Array[String](["Demon", "Hey"])
+flags = {}

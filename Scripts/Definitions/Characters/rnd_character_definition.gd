@@ -2,8 +2,8 @@ class_name RndCharacterDefinition extends Resource
 
 @export var id : String
 @export var parent : RndCharacterDefinition
-@export var first_name : Array[String]
-@export var last_name : Array[String]
+@export var name_generator : NameGenerator = NameGenerator.new()
+@export var name_gender : int = 1
 
 @export var stats : Array[StatsRnd]
 @export var skills : Dictionary
@@ -23,8 +23,9 @@ func create(new_id: String):
 		chara.tags = tags.duplicate()
 		chara.flags = flags.duplicate()
 	
-	chara.first_name = Tools.pick(first_name)
-	chara.last_name = Tools.pick(last_name)
+	if not chara.first_name:
+		chara.first_name = name_generator.generate_first_name(name_gender) #first_name.pick_random()
+		chara.last_name = name_generator.generate_last_name() #last_name.pick_random()
 	
 	chara.stats = {}
 	

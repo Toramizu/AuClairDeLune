@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DwarvenNameGenerator" load_steps=2 format=3 uid="uid://hhu8l03lwcw5"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/Names/dwarven_name.gd" id="1_sc7t6"]
+
+[resource]
+script = ExtResource("1_sc7t6")
+first_names = Array[String](["Nameless"])
+last_names = Array[String](["Moonchild"])

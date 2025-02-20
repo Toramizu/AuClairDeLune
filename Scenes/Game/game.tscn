@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=21 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Theme" uid="uid://cexayfkfkdx02" path="res://Resources/Themes/default_theme.tres" id="1_1jcdf"]
 [ext_resource type="Script" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/player_sheet.gd" id="4_s8eqs"]
 [ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="5_7x7gk"]
 [ext_resource type="Resource" uid="uid://dkw2fy04hfsyx" path="res://Resources/Locations/test_location.tres" id="5_mui8h"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/Names/elven_name.gd" id="6_1kd78"]
 [ext_resource type="Script" path="res://Scripts/UI/hp_display.gd" id="7_cjlu2"]
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="8_ukv28"]
 [ext_resource type="Texture2D" uid="uid://bidh73360j47" path="res://Assets/UI/Bars/GreenBar.png" id="9_aw8jr"]
@@ -18,6 +19,11 @@
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="15_avxts"]
 [ext_resource type="Texture2D" uid="uid://b8qspswy5rp6r" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Mask/panel-border-029.png" id="16_i08ya"]
 [ext_resource type="Script" path="res://Scripts/Game/location_manager.gd" id="16_l3exk"]
+
+[sub_resource type="Resource" id="Resource_41u3y"]
+script = ExtResource("6_1kd78")
+first_names = Array[String](["Nameless"])
+last_names = Array[String](["Starchild"])
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -33,6 +39,7 @@ starting_location = ExtResource("5_mui8h")
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("2_4ua2w")
 dialogue_resource = ExtResource("3_8og1e")
+generator = SubResource("Resource_41u3y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

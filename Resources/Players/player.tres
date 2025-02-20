@@ -11,7 +11,7 @@ starting_gold = 5
 id = "player"
 first_name = "Luna"
 last_name = "Moonlight"
-shown_name = ""
+nickname = ""
 stats = {
 "Cha": 14,
 "Con": 10,
@@ -22,3 +22,4 @@ stats = {
 }
 skills = {}
 tags = Array[String]([])
+flags = {}

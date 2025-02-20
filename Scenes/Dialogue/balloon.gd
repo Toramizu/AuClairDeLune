@@ -35,6 +35,9 @@ var dialogue_line: DialogueLine:
 	get:
 		return dialogue_line
 
+## The character currently talking
+var shown_character : CharacterDefinition
+
 ## A cooldown timer for delaying the balloon hide when encountering a mutation.
 var mutation_cooldown: Timer = Timer.new()
 
@@ -99,9 +102,12 @@ func apply_dialogue_line() -> void:
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
+	
+	if not dialogue_line.character.is_empty():
+		shown_character = Dialogue.actors[dialogue_line.character]
 
 	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = "[center]" + tr(dialogue_line.character, "dialogue") + "[/center]"
+	character_label.text = "[center]" + tr(shown_character.shown_name, "dialogue") + "[/center]"
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

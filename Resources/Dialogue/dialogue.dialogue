@@ -1,4 +1,7 @@
 ~ start
+do Dialogue.by_id("Someone", "Margaret")
+#do Dialogue.by_tags("Someone", ["Demon"])
+
 Someone: [[Hi|Hello|Howdy]], this is some dialogue.
 Someone: Here are some choices.
 - First one
