@@ -23,7 +23,7 @@ func create(new_id: String):
 		chara.tags = tags.duplicate()
 		chara.flags = flags.duplicate()
 	
-	if not chara.first_name:
+	if name_generator:
 		chara.first_name = name_generator.generate_first_name(name_gender) #first_name.pick_random()
 		chara.last_name = name_generator.generate_last_name() #last_name.pick_random()
 	

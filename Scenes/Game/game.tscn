@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=34 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Theme" uid="uid://cexayfkfkdx02" path="res://Resources/Themes/default_theme.tres" id="1_1jcdf"]
 [ext_resource type="Script" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
@@ -19,6 +19,19 @@
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="15_avxts"]
 [ext_resource type="Texture2D" uid="uid://b8qspswy5rp6r" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Mask/panel-border-029.png" id="16_i08ya"]
 [ext_resource type="Script" path="res://Scripts/Game/location_manager.gd" id="16_l3exk"]
+[ext_resource type="Texture2D" uid="uid://b8xygtngj5sd3" path="res://Assets/UI/play-button.png" id="17_jiq4n"]
+[ext_resource type="Texture2D" uid="uid://t0p7c58c2b5i" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_1.png" id="21_hywn1"]
+[ext_resource type="Texture2D" uid="uid://delvd4m7hg053" path="res://Assets/UI/duration.png" id="21_lhdey"]
+[ext_resource type="Script" path="res://Scripts/UI/time_button.gd" id="22_de5su"]
+[ext_resource type="Script" path="res://Scripts/UI/moon_phase.gd" id="22_eqwls"]
+[ext_resource type="Texture2D" uid="uid://c7qg3usa41r1b" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_2.png" id="23_sauqs"]
+[ext_resource type="Script" path="res://Scripts/UI/time_label.gd" id="23_vn2e5"]
+[ext_resource type="Texture2D" uid="uid://cshkrolh1fjn7" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_3.png" id="24_3iu4m"]
+[ext_resource type="Texture2D" uid="uid://b60eaum72sv7" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_4.png" id="25_llkl7"]
+[ext_resource type="Texture2D" uid="uid://bmcv8axbckdwp" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_5.png" id="26_nqevj"]
+[ext_resource type="Texture2D" uid="uid://pbvo0m6r02g1" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_6.png" id="27_aif0j"]
+[ext_resource type="Texture2D" uid="uid://cpbnegk45u5oh" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_7.png" id="28_a4bjg"]
+[ext_resource type="Texture2D" uid="uid://di0ulh02ad8sg" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_8.png" id="29_r7v20"]
 
 [sub_resource type="Resource" id="Resource_41u3y"]
 script = ExtResource("6_1kd78")
@@ -258,23 +271,23 @@ vertical_alignment = 1
 
 [node name="StatsContainer" type="HFlowContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 5
 alignment = 1
 
-[node name="Ding Button" type="Button" parent="HBoxContainer/PlayerPanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 57.0
-offset_top = -56.0
-offset_right = 101.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("17_jiq4n")
+flat = true
+icon_alignment = 1
+
+[node name="Ding Button" type="Button" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme = ExtResource("1_1jcdf")
 text = "Ding"
 
@@ -356,6 +369,22 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("15_avxts")
 
+[node name="TimeButton" type="Button" parent="HBoxContainer/InteractionPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("21_lhdey")
+flat = true
+script = ExtResource("22_de5su")
+
 [node name="InfoPanel" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -367,4 +396,37 @@ patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[connection signal="pressed" from="HBoxContainer/PlayerPanel/Ding Button" to="Debug" method="ding"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="TimeLabel" type="RichTextLabel" parent="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Monday 1
+Spring Year 1"
+fit_content = true
+scroll_active = false
+script = ExtResource("23_vn2e5")
+
+[node name="MoonPhase" type="TextureRect" parent="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("21_hywn1")
+stretch_mode = 3
+script = ExtResource("22_eqwls")
+moon_phases = Array[Texture]([ExtResource("21_hywn1"), ExtResource("23_sauqs"), ExtResource("24_3iu4m"), ExtResource("25_llkl7"), ExtResource("26_nqevj"), ExtResource("27_aif0j"), ExtResource("28_a4bjg"), ExtResource("29_r7v20")])
+
+[connection signal="pressed" from="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer/HBoxContainer/Ding Button" to="Debug" method="ding"]
+[connection signal="pressed" from="HBoxContainer/InteractionPanel/TimeButton" to="HBoxContainer/InteractionPanel/TimeButton" method="_on_pressed"]

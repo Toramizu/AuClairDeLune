@@ -1,0 +1,15 @@
+First Town Content
+
+Work :
+	- Guard -> Scout / Royal Guard
+	- Server -> Dancer / Barmaid
+	- Saleswoman -> Shopkeeper
+	- Teacher -> Magic Researcher / Head Teacher
+	- Prostitute -> Escort / Madam
+
+Logement :
+	- Inn (G/Night)
+	- Streets (Free)
+	- Small Shack (G/Week)
+	- Appartment (G/Week)
+	- House (G/Week)
