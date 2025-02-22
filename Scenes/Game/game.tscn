@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=35 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Theme" uid="uid://cexayfkfkdx02" path="res://Resources/Themes/default_theme.tres" id="1_1jcdf"]
 [ext_resource type="Script" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/hp_display.gd" id="7_cjlu2"]
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="8_ukv28"]
 [ext_resource type="Texture2D" uid="uid://bidh73360j47" path="res://Assets/UI/Bars/GreenBar.png" id="9_aw8jr"]
+[ext_resource type="LabelSettings" uid="uid://cvs3hrlq3ajm" path="res://Resources/Themes/character_name_label.tres" id="9_rn7em"]
 [ext_resource type="Script" path="res://Scripts/UI/mp_display.gd" id="10_secsd"]
 [ext_resource type="Texture2D" uid="uid://bldsclyiut4i6" path="res://Assets/UI/Bars/BlueBar.png" id="11_kco0d"]
 [ext_resource type="Script" path="res://Scripts/UI/ap_display.gd" id="12_b7nyy"]
@@ -62,7 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerPanel" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "stats_container", "gold_label")]
+[node name="PlayerPanel" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "gold_label", "stats_container", "skill_container")]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("5_7x7gk")
@@ -74,8 +75,9 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("4_s8eqs")
 name_label = NodePath("MarginContainer/VBoxContainer/NameLabel")
-stats_container = NodePath("MarginContainer/VBoxContainer/StatsContainer")
 gold_label = NodePath("MarginContainer/VBoxContainer/CurrencyContainer/GoldContainer/Label")
+stats_container = NodePath("MarginContainer/VBoxContainer/StatsContainer")
+skill_container = NodePath("MarginContainer/VBoxContainer/SkillScrollContainer/SkillContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PlayerPanel"]
 layout_mode = 1
@@ -94,13 +96,11 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="NameLabel" type="RichTextLabel" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Character"
-fit_content = true
-scroll_active = false
+text = "Name"
+label_settings = ExtResource("9_rn7em")
+horizontal_alignment = 1
 
 [node name="ResourcesContainer" type="HBoxContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -271,10 +271,19 @@ vertical_alignment = 1
 
 [node name="StatsContainer" type="HFlowContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 5
 alignment = 1
+
+[node name="SkillScrollContainer" type="ScrollContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="SkillContainer" type="VFlowContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer/SkillScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2

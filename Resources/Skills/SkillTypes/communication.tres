@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillTypeDefinition" load_steps=2 format=3 uid="uid://ccjt8hyf5qewy"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_type_definition.gd" id="1_d5gx1"]
+
+[resource]
+script = ExtResource("1_d5gx1")
+id = "Com"
+name = "Communication"
+major_stats_id = Array[String](["Cha"])
+minor_stats_id = Array[String](["Int", "Wil"])
+color = Color(0, 0, 0, 1)

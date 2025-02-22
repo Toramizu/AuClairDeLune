@@ -5,6 +5,10 @@ class_name RndCharacterDefinition extends Resource
 @export var name_generator : NameGenerator = NameGenerator.new()
 @export var name_gender : int = 1
 
+@export var max_hp : int
+@export var max_mp : int
+@export var max_ap : int
+
 @export var stats : Array[StatsRnd]
 @export var skills : Dictionary
 

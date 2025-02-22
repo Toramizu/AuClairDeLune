@@ -5,6 +5,9 @@ extends Node
 
 @export var generator : NameGenerator
 
+func _ready():
+	pass
+
 func debugDialogue():
 	%InteractionManager.start_dialogue(dialogue_resource, dialogue_start)
 	

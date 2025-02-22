@@ -6,8 +6,10 @@
 [resource]
 script = ExtResource("1_4d7ji")
 id = ""
-first_name = Array[String]([])
-last_name = Array[String]([])
+name_gender = 1
+max_hp = 0
+max_mp = 0
+max_ap = 0
 stats = Array[ExtResource("2_a6v8m")]([])
 skills = {}
 tags = Array[String]([])

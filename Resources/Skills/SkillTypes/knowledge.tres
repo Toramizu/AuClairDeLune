@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillTypeDefinition" load_steps=2 format=3 uid="uid://8e6xl0ndqj6w"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_type_definition.gd" id="1_a245o"]
+
+[resource]
+script = ExtResource("1_a245o")
+id = "Kno"
+name = "Knowledge"
+major_stats_id = Array[String](["Int"])
+minor_stats_id = Array[String](["Wil"])
+color = Color(0, 0, 0, 1)

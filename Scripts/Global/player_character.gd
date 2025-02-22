@@ -1,6 +1,7 @@
 extends Node
 
-const player_def: PlayerDefinition = preload("res://Resources/Players/player.tres")
+const player_def: PlayerDefinition = preload("res://Resources/Players/test_player.tres")
+#const player_def: PlayerDefinition = preload("res://Resources/Players/player.tres")
 
 var hp : int
 var mp : int
@@ -40,9 +41,10 @@ var max_ap : int :
 
 func _ready():
 	character = player_def.duplicate()
+	character._complete_load()
 	hp = character.max_hp
 	mp = character.max_mp
-	ap = character.max_ap
+	ap = 0
 	gold = character.starting_gold
 
 func get_stat(stat: String) -> int:
@@ -51,9 +53,19 @@ func get_stat(stat: String) -> int:
 	else:
 		return 0
 
+func get_stat_mod(stat: String) -> int:
+	return get_stat(stat) - 10
+
 func get_skill(skill: String) -> int:
-	if character.skills.has(skill):
-		return character.skills[skill]
+	if character.skills.has(skill) and character.skills[skill] > 0:
+		var skl = Database.skills[skill]
+		var val = character.skills[skill]
+		for stat in skl.type.major_stats:
+			val += get_stat_mod(stat.id)
+		for stat in skl.type.minor_stats:
+			@warning_ignore("integer_division")
+			val += get_stat_mod(stat.id) / 2
+		return val
 	else:
 		return 0
 	

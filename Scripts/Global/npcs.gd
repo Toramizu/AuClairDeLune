@@ -28,6 +28,7 @@ func _ready():
 				if not active_characters_tags.has(tag):
 					active_characters_tags[tag] = []
 				active_characters_tags[tag].append(chara)
+			chara._complete_load()
 
 func get_character_by_id(id: String):
 	if active_characters.has(id):

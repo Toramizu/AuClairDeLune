@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d15ysak76f2ed"]
+[gd_scene load_steps=6 format=3 uid="uid://d15ysak76f2ed"]
 
 [ext_resource type="Script" path="res://Scenes/Dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="2_2fbej"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="LabelSettings" uid="uid://cvs3hrlq3ajm" path="res://Resources/Themes/character_name_label.tres" id="5_uyekb"]
 
 [node name="Balloon" type="CanvasLayer"]
 layer = 100
@@ -87,14 +88,13 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 alignment = 2
 
-[node name="CharacterLabel" type="RichTextLabel" parent="HBoxContainer/InfoPanel/VBoxContainer"]
+[node name="CharacterLabel" type="Label" parent="HBoxContainer/InfoPanel/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Character"
-fit_content = true
-scroll_active = false
+text = "Name"
+label_settings = ExtResource("5_uyekb")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="gui_input" from="HBoxContainer/NinePatchRect/Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="HBoxContainer/NinePatchRect/Balloon/VBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

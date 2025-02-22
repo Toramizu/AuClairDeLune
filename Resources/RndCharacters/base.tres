@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RndCharacterDefinition" load_steps=4 format=3 uid="uid://2s4qhcubwhlg"]
+
+[ext_resource type="Resource" uid="uid://yf5ru7xv06ap" path="res://Resources/RndCharacters/Generators/elven_names.tres" id="1_ylkd5"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/rnd_character_definition.gd" id="2_e7s31"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/stats_rnd.gd" id="3_nco3g"]
+
+[resource]
+script = ExtResource("2_e7s31")
+id = ""
+name_generator = ExtResource("1_ylkd5")
+name_gender = 1
+stats = Array[ExtResource("3_nco3g")]([])
+skills = {}
+tags = Array[String]([])
+flags = {}

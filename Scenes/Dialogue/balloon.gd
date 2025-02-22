@@ -45,7 +45,7 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var balloon: Control = %Balloon
 
 ## The label showing the name of the currently speaking character
-@onready var character_label: RichTextLabel = %CharacterLabel
+@onready var character_label: Label = %CharacterLabel
 
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
@@ -107,7 +107,7 @@ func apply_dialogue_line() -> void:
 		shown_character = Dialogue.actors[dialogue_line.character]
 
 	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = "[center]" + tr(shown_character.shown_name, "dialogue") + "[/center]"
+	character_label.text = tr(shown_character.shown_name, "dialogue")
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

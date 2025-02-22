@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillDefinition" load_steps=3 format=3 uid="uid://p516yj7wip33"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_wclgt"]
+[ext_resource type="Texture2D" uid="uid://ixd0y78j1hb7" path="res://Assets/Skills/hiding.png" id="1_x5ffq"]
+
+[resource]
+script = ExtResource("1_wclgt")
+id = "Hid"
+full_name = "Hiding"
+_type = "Ste"
+icon = ExtResource("1_x5ffq")
+start_value = 10

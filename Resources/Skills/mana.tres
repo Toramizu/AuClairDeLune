@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillDefinition" load_steps=3 format=3 uid="uid://62vryfdq8pns"]
+
+[ext_resource type="Texture2D" uid="uid://xumvyasqtomc" path="res://Assets/Skills/mana.png" id="1_lchvc"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="2_250jv"]
+
+[resource]
+script = ExtResource("2_250jv")
+id = "Man"
+full_name = "Mana"
+type_id = "Mag"
+icon = ExtResource("1_lchvc")
+start_value = 10

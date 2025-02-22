@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillTypeDefinition" load_steps=2 format=3 uid="uid://cvinf60ggn2ey"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_type_definition.gd" id="1_dyd04"]
+
+[resource]
+script = ExtResource("1_dyd04")
+id = "Mag"
+name = "Magic"
+major_stats_id = Array[String](["Wil"])
+minor_stats_id = Array[String](["Int"])
+color = Color(0, 0, 0, 1)
