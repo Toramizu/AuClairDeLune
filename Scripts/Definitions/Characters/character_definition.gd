@@ -19,10 +19,10 @@ var shown_name : String :
 
 var max_hp : int :
 	get :
-		return stats["Con"] * 10
+		return stats["Str"] + stats["Dex"] + stats["Con"]
 var max_mp : int :
 	get :
-		return skills["Man"]
+		return stats["Int"] + stats["Wil"] + stats["Cha"]
 var max_ap : int :
 	get :
 		return 100 #+ stats["Wil"]
@@ -35,3 +35,32 @@ func _complete_load():
 	for skill in Database.skills:
 		if not skills.has(skill):
 			skills[skill] = Database.skills[skill].start_value
+
+func get_stat(stat: String) -> int:
+	if stats.has(stat):
+		return stats[stat]
+	else:
+		return 0
+
+func get_stat_mod(stat: String, sub: bool = false) -> int:
+	if sub:
+		@warning_ignore("integer_division")
+		return (get_stat(stat) - 10) / 2
+	else:
+		return get_stat(stat) - 10
+
+func get_skill(skill: String) -> int:
+	if skills.has(skill) and skills[skill] > 0:
+		var skl = Database.skills[skill]
+		var val = skills[skill]
+		print("=> %d" % val)
+		if skl.main_stat:
+			val += get_stat_mod(skl.main_stat.id)
+			print(get_stat_mod(skl.main_stat.id))
+		if skl.sub_stat:
+			val += get_stat_mod(skl.sub_stat.id, true)
+			print(get_stat_mod(skl.sub_stat.id, true))
+		print("%d <=" % val)
+		return val
+	else:
+		return 0

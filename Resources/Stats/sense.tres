@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatDefinition" load_steps=2 format=3 uid="uid://gfgx70e6or2p"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/stat_definition.gd" id="1_i0wgy"]
+
+[resource]
+script = ExtResource("1_i0wgy")
+id = "Sen"
+full_name = "Sense"
+type = "Mind"
+color = Color(0.121569, 0.890196, 0.909804, 1)
+order = 4.0

@@ -7,6 +7,7 @@
 script = ExtResource("1_odb81")
 id = "Dan"
 full_name = "Dance"
-_type = "Com"
 icon = ExtResource("1_rsqv0")
 start_value = 10
+_main_stat = "Dex"
+_sub_stat = "Cha"

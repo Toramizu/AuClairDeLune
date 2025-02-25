@@ -7,6 +7,7 @@
 script = ExtResource("1_7e5gs")
 id = "Int"
 full_name = "Intimidate"
-_type = "Com"
 icon = ExtResource("1_5exdo")
 start_value = 10
+_main_stat = "Cha"
+_sub_stat = "Str"

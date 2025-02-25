@@ -8,3 +8,4 @@ id = "Con"
 full_name = "Constitution"
 type = "Body"
 color = Color(0.921569, 0.670588, 0.203922, 1)
+order = 2.0

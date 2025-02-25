@@ -1,7 +1,8 @@
 extends Node
 
+var sorted_stats : Array[String]
+
 var stats : Dictionary
-var skill_types : Dictionary
 var skills : Dictionary
 var i : int
 
@@ -11,17 +12,17 @@ func _ready():
 		var stat = load(path + filePath)
 		if stat.id:
 			stats[stat.id] = stat
-	
-	path = "res://Resources/Skills/SkillTypes/"
-	for filePath in DirAccess.get_files_at(path):
-		var skill_type = load(path + filePath)
-		if skill_type.id:
-			skill_types[skill_type.id] = skill_type
-			skill_type._load_db(stats)
+			sorted_stats.append(stat.id)
+	sorted_stats.sort_custom(sort_ascending)
 	
 	path = "res://Resources/Skills/"
 	for filePath in DirAccess.get_files_at(path):
 		var skill = load(path + filePath)
 		if skill.id:
 			skills[skill.id] = skill
-			skill._load_db(skill_types)
+			skill._load_db(stats)
+
+func sort_ascending(a, b):
+	if stats[a].order < stats[b].order:
+		return true
+	return false

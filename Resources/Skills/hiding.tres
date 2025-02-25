@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("1_wclgt")
-id = "Hid"
-full_name = "Hiding"
-_type = "Ste"
+id = "Ste"
+full_name = "Stealth"
 icon = ExtResource("1_x5ffq")
 start_value = 10
+_main_stat = "Dex"
+_sub_stat = "Sen"

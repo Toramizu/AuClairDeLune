@@ -48,27 +48,13 @@ func _ready():
 	gold = character.starting_gold
 
 func get_stat(stat: String) -> int:
-	if character.stats.has(stat):
-		return character.stats[stat]
-	else:
-		return 0
+	return character.get_stat(stat)
 
-func get_stat_mod(stat: String) -> int:
-	return get_stat(stat) - 10
+func get_stat_mod(stat: String, sub: bool = false) -> int:
+	return character.get_stat_mod(stat, sub)
 
 func get_skill(skill: String) -> int:
-	if character.skills.has(skill) and character.skills[skill] > 0:
-		var skl = Database.skills[skill]
-		var val = character.skills[skill]
-		for stat in skl.type.major_stats:
-			val += get_stat_mod(stat.id)
-		for stat in skl.type.minor_stats:
-			@warning_ignore("integer_division")
-			val += get_stat_mod(stat.id) / 2
-		return val
-	else:
-		return 0
-	
+	return character.get_skill(skill)
 
 func skill_check(skill: String, target: int) -> bool:
 	var val = get_skill(skill)
