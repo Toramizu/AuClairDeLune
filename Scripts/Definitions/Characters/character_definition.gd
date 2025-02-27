@@ -17,6 +17,10 @@ var shown_name : String :
 @export var tags : Array[String]
 @export var flags : Dictionary
 
+@export var player_relationships : Array[String]
+@export var friendship : float
+@export var attraction : float
+
 var max_hp : int :
 	get :
 		return stats["Str"] + stats["Dex"] + stats["Con"]
@@ -53,14 +57,10 @@ func get_skill(skill: String) -> int:
 	if skills.has(skill) and skills[skill] > 0:
 		var skl = Database.skills[skill]
 		var val = skills[skill]
-		print("=> %d" % val)
 		if skl.main_stat:
 			val += get_stat_mod(skl.main_stat.id)
-			print(get_stat_mod(skl.main_stat.id))
 		if skl.sub_stat:
 			val += get_stat_mod(skl.sub_stat.id, true)
-			print(get_stat_mod(skl.sub_stat.id, true))
-		print("%d <=" % val)
 		return val
 	else:
 		return 0

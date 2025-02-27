@@ -24,6 +24,9 @@ var moon_delay : int = -2
 var weekday : String :
 	get :
 		return Weekdays[day % DaysPerWeek]
+var small_weekday : String :
+	get :
+		return weekday.substr(0, 3)
 var season : String :
 	get :
 		return Seasons[month]

@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="CharacterDefinition" load_steps=2 format=3 uid="uid://beq4tjrargsx8"]
+[gd_resource type="Resource" script_class="NPCDefinition" load_steps=2 format=3 uid="uid://cgeyk0g5opgua"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/character_definition.gd" id="1_iulr6"]
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="1_vrkpr"]
 
 [resource]
-script = ExtResource("1_iulr6")
+script = ExtResource("1_vrkpr")
 id = "Margaret"
 first_name = "Margaret"
-last_name = "Blackblood"
+last_name = "Lustytail"
 nickname = ""
 stats = {}
 skills = {}
-tags = Array[String](["Demon", "Hey"])
+tags = Array[String](["Demon"])
 flags = {}
+player_relationships = Array[String]([])
+friendship = 2.0
+attraction = 2.0

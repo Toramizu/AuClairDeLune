@@ -5,4 +5,4 @@ func _ready():
 	write_time()
 
 func write_time():
-	text = "[center]%d %s\n%s Year %d[/center]" % [TimeManager.day, TimeManager.weekday, TimeManager.season, TimeManager.year]
+	text = "[center]%s. %d\n%s[/center]" % [TimeManager.small_weekday, TimeManager.day, TimeManager.season]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8xygtngj5sd3"
-path="res://.godot/imported/play-button.png-22ea498b1cdf706f59e0d8056d81f851.ctex"
+uid="uid://nnsdk3v0gsa6"
+path="res://.godot/imported/Ding.png-e429c05a937b2e02c688778f7813105a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/play-button.png"
-dest_files=["res://.godot/imported/play-button.png-22ea498b1cdf706f59e0d8056d81f851.ctex"]
+source_file="res://Assets/UI/Icons/Ding.png"
+dest_files=["res://.godot/imported/Ding.png-e429c05a937b2e02c688778f7813105a.ctex"]
 
 [params]
 

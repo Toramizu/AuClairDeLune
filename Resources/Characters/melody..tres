@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NPCDefinition" load_steps=2 format=3 uid="uid://cp64kh2mun3b2"]
+
+[ext_resource type="Script" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="1_eh30v"]
+
+[resource]
+script = ExtResource("1_eh30v")
+id = "Melody"
+first_name = "Melody"
+last_name = "Silversong"
+nickname = ""
+stats = {}
+skills = {}
+tags = Array[String](["Elf"])
+flags = {}
+player_relationships = Array[String](["Friend"])
+friendship = 7.0
+attraction = 8.0

@@ -1,8 +1,15 @@
+-> Location
+	-> Sleeping place
+	-> Costs/Revenues
+	-> Default place / what to do if Gold + Revenue < Cost
+-> Relationships
+	-> Relation status (Acquintances, Friends, Family,...)
+	-> Friend list
+	-> Simple interactions
 -> Save & Load game
 
--> How to use Stats with Skills?
-	-> If Roll <= Stat : Skill check success?
-	-> Flat bonus on rolls?
-	-> Roll for improvement? 
-		(Roll 1D20, if it's < Stat, +1 Skill; Auto +1 for every 20 Stat; Skill needs more exp at higher levels)
-	-> Skill Xp & Stat gives bonus Xp
+
+Screens :
+	Left 	=> Player Stats & Skills / Inventory / Reputation & Misc player data
+	Center 	=> Map / Dialogue
+	Right 	=> Contacts

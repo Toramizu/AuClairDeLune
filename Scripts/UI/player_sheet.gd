@@ -8,7 +8,7 @@ extends Control
 var stat_preload = preload("res://Scenes/UI/stat_label.tscn")
 var skill_preload = preload("res://Scenes/UI/skill_label.tscn")
 
-func _ready():
+func show_player_stats():
 	name_label.text = Player.shown_name
 	
 	var statsDB = Database.stats

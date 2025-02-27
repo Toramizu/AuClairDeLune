@@ -1,16 +1,12 @@
 extends Node
 
-@export var dialogue_resource: DialogueResource
-@export var dialogue_start: String = "start"
-
 @export var generator : NameGenerator
+@export var npcs : Array[NPCDefinition]
 
-func _ready():
-	pass
+func run_debug():
+	print("Ding")
+	Npcs.contacts = npcs
 
-func debugDialogue():
-	%InteractionManager.start_dialogue(dialogue_resource, dialogue_start)
-	
 func ding():
 	#print("Ding")
 	print(generator.generate_first_name(1) + " " + generator.generate_last_name())

@@ -1,12 +1,15 @@
 extends Node
 
-var base_characters : Dictionary = {}
-var base_characters_tags : Dictionary = {}
+var base_characters : Dictionary
+var base_characters_tags : Dictionary
 
-var active_characters : Dictionary = {}
-var active_characters_tags : Dictionary = {}
+var active_characters : Dictionary
+var active_characters_tags : Dictionary
 
 var tags_search: String
+
+var contact_ids : Array[String]
+var contacts : Array[NPCDefinition]
 
 func _ready():
 	var path = "res://Resources/RndCharacters/"
@@ -29,6 +32,9 @@ func _ready():
 					active_characters_tags[tag] = []
 				active_characters_tags[tag].append(chara)
 			chara._complete_load()
+	
+	for id in contact_ids:
+		contacts.append(active_characters[id])
 
 func get_character_by_id(id: String):
 	if active_characters.has(id):
