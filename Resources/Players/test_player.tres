@@ -20,3 +20,6 @@ stats = {
 skills = {}
 tags = Array[String]([])
 flags = {}
+player_relationships = Array[String]([])
+friendship = 0.0
+attraction = 0.0

@@ -8,7 +8,7 @@ outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="StatLabel" type="NinePatchRect" node_paths=PackedStringArray("label")]
-custom_minimum_size = Vector2(75, 25)
+custom_minimum_size = Vector2(100, 30)
 offset_right = 80.0
 offset_bottom = 40.0
 mouse_filter = 1

@@ -8,6 +8,7 @@ func _ready():
 
 func start_dialogue(dialogue_resource: DialogueResource, dialogue_start: String):
 	%LocationManager.toggle_details(false)
+	%InfoPanel.toggle_details(false)
 	
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
@@ -15,4 +16,5 @@ func start_dialogue(dialogue_resource: DialogueResource, dialogue_start: String)
 
 func end_dialogue():
 	%LocationManager.toggle_details(true)
+	%InfoPanel.toggle_details(true)
 	

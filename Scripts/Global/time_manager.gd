@@ -36,7 +36,8 @@ var total_time : int :
 		return day_time + day * TimePerDay + month * TimePerMonth + year * TimePerYear
 var moon_phase : int :
 	get :
-		return (total_time + moon_delay) % 8
+		@warning_ignore("integer_division")
+		return (total_time/2 + moon_delay) % 8
 
 
 var time_notes : Dictionary = {}

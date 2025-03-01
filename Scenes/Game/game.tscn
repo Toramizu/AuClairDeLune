@@ -1,19 +1,19 @@
-[gd_scene load_steps=39 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=48 format=3 uid="uid://1b02b0y5mec4"]
 
-[ext_resource type="Theme" uid="uid://cexayfkfkdx02" path="res://Resources/Themes/default_theme.tres" id="1_1jcdf"]
 [ext_resource type="Script" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
 [ext_resource type="Script" path="res://Scripts/Game/game.gd" id="2_nuhtr"]
 [ext_resource type="Script" path="res://Scripts/UI/player_sheet.gd" id="4_s8eqs"]
-[ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="5_7x7gk"]
 [ext_resource type="Resource" uid="uid://dkw2fy04hfsyx" path="res://Resources/Locations/test_location.tres" id="5_mui8h"]
 [ext_resource type="Script" path="res://Scripts/Definitions/Rnd/Names/elven_name.gd" id="6_1kd78"]
 [ext_resource type="Script" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="6_uh1e5"]
 [ext_resource type="Script" path="res://Scripts/UI/hp_display.gd" id="7_cjlu2"]
 [ext_resource type="Resource" uid="uid://cgeyk0g5opgua" path="res://Resources/Characters/margaret.tres" id="7_eycma"]
 [ext_resource type="Resource" uid="uid://cp64kh2mun3b2" path="res://Resources/Characters/melody..tres" id="8_3ywly"]
+[ext_resource type="Theme" uid="uid://cebssi3strko3" path="res://Themes/day_theme.res" id="8_iladd"]
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="8_ukv28"]
+[ext_resource type="Script" path="res://Scripts/UI/theme_manager.gd" id="9_2k753"]
 [ext_resource type="Texture2D" uid="uid://bidh73360j47" path="res://Assets/UI/Bars/GreenBar.png" id="9_aw8jr"]
-[ext_resource type="LabelSettings" uid="uid://cvs3hrlq3ajm" path="res://Resources/Themes/character_name_label.tres" id="9_rn7em"]
+[ext_resource type="Texture2D" uid="uid://dupbxkl184vbs" path="res://Assets/UI/Frames/Day/Double_Main_Left.png" id="10_cwgk4"]
 [ext_resource type="Script" path="res://Scripts/UI/mp_display.gd" id="10_secsd"]
 [ext_resource type="Texture2D" uid="uid://bldsclyiut4i6" path="res://Assets/UI/Bars/BlueBar.png" id="11_kco0d"]
 [ext_resource type="Script" path="res://Scripts/UI/ap_display.gd" id="12_b7nyy"]
@@ -22,9 +22,12 @@
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="15_avxts"]
 [ext_resource type="Texture2D" uid="uid://b8qspswy5rp6r" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Mask/panel-border-029.png" id="16_i08ya"]
 [ext_resource type="Script" path="res://Scripts/Game/location_manager.gd" id="16_l3exk"]
+[ext_resource type="Texture2D" uid="uid://cpp7u6jmbag48" path="res://Assets/UI/Icons/Skills.png" id="19_vfis4"]
+[ext_resource type="Texture2D" uid="uid://csx443o2j7k8" path="res://Assets/UI/Icons/Inventory.png" id="20_jwan3"]
 [ext_resource type="Texture2D" uid="uid://t0p7c58c2b5i" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_1.png" id="21_hywn1"]
 [ext_resource type="Texture2D" uid="uid://delvd4m7hg053" path="res://Assets/UI/Icons/duration.png" id="21_lhdey"]
 [ext_resource type="Script" path="res://Scripts/UI/time_button.gd" id="22_de5su"]
+[ext_resource type="Texture2D" uid="uid://dvst4ceth6hst" path="res://Assets/UI/Frames/Day/Double_Main_Center.png" id="22_ecj8g"]
 [ext_resource type="Script" path="res://Scripts/UI/moon_phase.gd" id="22_eqwls"]
 [ext_resource type="Texture2D" uid="uid://c7qg3usa41r1b" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_2.png" id="23_sauqs"]
 [ext_resource type="Script" path="res://Scripts/UI/time_label.gd" id="23_vn2e5"]
@@ -33,10 +36,16 @@
 [ext_resource type="Texture2D" uid="uid://bmcv8axbckdwp" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_5.png" id="26_nqevj"]
 [ext_resource type="Texture2D" uid="uid://pbvo0m6r02g1" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_6.png" id="27_aif0j"]
 [ext_resource type="Texture2D" uid="uid://cpbnegk45u5oh" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_7.png" id="28_a4bjg"]
+[ext_resource type="Texture2D" uid="uid://c53e6wldkqwva" path="res://Assets/UI/Frames/Day/Double_Main_Right.png" id="28_fkmfg"]
 [ext_resource type="Texture2D" uid="uid://di0ulh02ad8sg" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_8.png" id="29_r7v20"]
-[ext_resource type="Texture2D" uid="uid://nnsdk3v0gsa6" path="res://Assets/UI/Icons/Ding.png" id="33_indyb"]
 [ext_resource type="Texture2D" uid="uid://de4aj0vyhhwid" path="res://Assets/UI/Icons/Settings.png" id="34_dg6kc"]
-[ext_resource type="Script" path="res://Scripts/Game/contact_manager.gd" id="35_osvra"]
+[ext_resource type="Script" path="res://Scripts/Game/info_manager.gd" id="35_osvra"]
+[ext_resource type="Script" path="res://Scripts/UI/npc_sheet.gd" id="38_rptwl"]
+[ext_resource type="Texture2D" uid="uid://p400eu6blp8r" path="res://Assets/UI/Icons/Contacts.png" id="38_t53cg"]
+[ext_resource type="Texture2D" uid="uid://b4c16chy6b0gg" path="res://Assets/UI/Icons/Tasks.png" id="39_8oggh"]
+[ext_resource type="Texture2D" uid="uid://dcc5imdxl40ji" path="res://Assets/Images/Melody.png" id="39_wcxgk"]
+[ext_resource type="PackedScene" uid="uid://dw1vm22ls8tw8" path="res://Scenes/UI/contact_button.tscn" id="41_u8123"]
+[ext_resource type="Texture2D" uid="uid://5gcpm54fuw51" path="res://Assets/UI/Icons/Return.png" id="47_b6jxw"]
 
 [sub_resource type="Resource" id="Resource_41u3y"]
 script = ExtResource("6_1kd78")
@@ -50,7 +59,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_1jcdf")
 script = ExtResource("2_nuhtr")
 starting_location = ExtResource("5_mui8h")
 
@@ -60,7 +68,7 @@ script = ExtResource("2_4ua2w")
 generator = SubResource("Resource_41u3y")
 npcs = Array[ExtResource("6_uh1e5")]([ExtResource("7_eycma"), ExtResource("8_3ywly")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,11 +76,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerSheet" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "gold_label", "stats_container", "skill_container")]
+[node name="HBoxContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("background", "main_left_panel", "main_center_panel", "main_right_panel")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_iladd")
+theme_override_constants/separation = -1
+script = ExtResource("9_2k753")
+background = NodePath("../Background")
+main_left_panel = NodePath("PlayerSheet")
+main_center_panel = NodePath("InteractionPanel")
+main_right_panel = NodePath("InfoPanel")
+
+[node name="PlayerSheet" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "gold_label", "stats_container", "skill_container", "inventory_container")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("5_7x7gk")
+texture = ExtResource("10_cwgk4")
 patch_margin_left = 33
 patch_margin_top = 33
 patch_margin_right = 33
@@ -80,10 +103,11 @@ patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("4_s8eqs")
-name_label = NodePath("MarginContainer/VBoxContainer/NameLabel")
+name_label = NodePath("MarginContainer/VBoxContainer/Panel/VBoxContainer/NameLabel")
 gold_label = NodePath("MarginContainer/VBoxContainer/CurrencyContainer/GoldContainer/Label")
 stats_container = NodePath("MarginContainer/VBoxContainer/StatsContainer")
 skill_container = NodePath("MarginContainer/VBoxContainer/SkillScrollContainer/SkillContainer")
+inventory_container = NodePath("MarginContainer/VBoxContainer/InventoryScrollContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PlayerSheet"]
 layout_mode = 1
@@ -100,13 +124,31 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerSheet/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 10
 
-[node name="NameLabel" type="Label" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Name"
-label_settings = ExtResource("9_rn7em")
-horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NameLabel" type="RichTextLabel" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]Luna"
+fit_content = true
 
 [node name="ResourcesContainer" type="HBoxContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -230,9 +272,19 @@ vertical_alignment = 1
 
 [node name="StatsContainer" type="HFlowContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 5
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 7
 alignment = 1
+
+[node name="TabBar" type="TabBar" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
+layout_mode = 2
+current_tab = 0
+tab_alignment = 1
+tab_count = 2
+tab_0/tooltip = "Skills"
+tab_0/icon = ExtResource("19_vfis4")
+tab_1/tooltip = "Inventory"
+tab_1/icon = ExtResource("20_jwan3")
 
 [node name="SkillScrollContainer" type="ScrollContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -243,6 +295,21 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="InventoryScrollContainer" type="ScrollContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/InventoryScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/InventoryScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Inventory
+~WIP~"
+horizontal_alignment = 1
 
 [node name="CurrencyContainer" type="HBoxContainer" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -268,7 +335,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("5_7x7gk")
+texture = ExtResource("22_ecj8g")
 patch_margin_left = 33
 patch_margin_top = 33
 patch_margin_right = 33
@@ -331,22 +398,6 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/Control/Panel"]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 80.0
-alignment = 1
-
-[node name="TimeLabel" type="RichTextLabel" parent="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/Control/Panel/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 4
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]1 Mon.
-Spring"
-fit_content = true
-script = ExtResource("23_vn2e5")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/Control/Panel"]
 layout_mode = 1
 anchors_preset = 10
@@ -367,19 +418,6 @@ theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "[center]Location[/center]"
 fit_content = true
-
-[node name="MoonPhase" type="TextureRect" parent="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/Control/Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -100.0
-offset_bottom = 80.0
-grow_horizontal = 0
-texture = ExtResource("21_hywn1")
-stretch_mode = 3
-script = ExtResource("22_eqwls")
-moon_phases = Array[Texture]([ExtResource("21_hywn1"), ExtResource("23_sauqs"), ExtResource("24_3iu4m"), ExtResource("25_llkl7"), ExtResource("26_nqevj"), ExtResource("27_aif0j"), ExtResource("28_a4bjg"), ExtResource("29_r7v20")])
 
 [node name="LocationPanel" type="Control" parent="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel"]
 layout_mode = 2
@@ -403,16 +441,24 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("15_avxts")
 
-[node name="InfoPanel" type="NinePatchRect" parent="HBoxContainer"]
+[node name="InfoPanel" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("info_panel", "contact_list", "contact_button_container", "npc_sheet", "task_container", "settings_container")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("5_7x7gk")
+texture = ExtResource("28_fkmfg")
 patch_margin_left = 33
 patch_margin_top = 33
 patch_margin_right = 33
 patch_margin_bottom = 33
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+script = ExtResource("35_osvra")
+info_panel = NodePath("MarginContainer/InfoManager/VBoxContainer")
+contact_list = NodePath("MarginContainer/InfoManager/VBoxContainer/ContactList")
+contact_button_container = NodePath("MarginContainer/InfoManager/VBoxContainer/ContactList/ContactButtonContainer")
+npc_sheet = NodePath("MarginContainer/InfoManager/VBoxContainer/NpcSheet")
+task_container = NodePath("MarginContainer/InfoManager/VBoxContainer/TaskContainer")
+settings_container = NodePath("MarginContainer/InfoManager/VBoxContainer/SettingsContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/InfoPanel"]
 layout_mode = 1
@@ -426,32 +472,170 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer"]
+[node name="InfoManager" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="Ding Button" type="Button" parent="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TimeLabel" type="RichTextLabel" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/Panel/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme = ExtResource("1_1jcdf")
-icon = ExtResource("33_indyb")
-flat = true
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]Monday 1, Spring 1"
+fit_content = true
+script = ExtResource("23_vn2e5")
 
-[node name="SettingsButton" type="Button" parent="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="MoonPhase" type="TextureRect" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/Panel/HBoxContainer"]
 layout_mode = 2
-icon = ExtResource("34_dg6kc")
-flat = true
-icon_alignment = 1
+texture = ExtResource("21_hywn1")
+stretch_mode = 3
+script = ExtResource("22_eqwls")
+moon_phases = Array[Texture]([ExtResource("21_hywn1"), ExtResource("23_sauqs"), ExtResource("24_3iu4m"), ExtResource("25_llkl7"), ExtResource("26_nqevj"), ExtResource("27_aif0j"), ExtResource("28_a4bjg"), ExtResource("29_r7v20")])
 
-[node name="ContactManager" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager"]
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("35_osvra")
 
+[node name="TabBar" type="TabBar" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer"]
+layout_mode = 2
+current_tab = 0
+tab_alignment = 1
+tab_count = 3
+tab_0/tooltip = "Contacts"
+tab_0/icon = ExtResource("38_t53cg")
+tab_1/tooltip = "Tasks"
+tab_1/icon = ExtResource("39_8oggh")
+tab_2/tooltip = "Settings"
+tab_2/icon = ExtResource("34_dg6kc")
+
+[node name="ContactList" type="ScrollContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContactButtonContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/ContactList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ContactButton" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/ContactList/ContactButtonContainer" instance=ExtResource("41_u8123")]
+layout_mode = 2
+
+[node name="NpcSheet" type="Control" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer" node_paths=PackedStringArray("name_label", "image_texture")]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("38_rptwl")
+name_label = NodePath("VBoxContainer/Panel/VBoxContainer/NameLabel")
+image_texture = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("39_wcxgk")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NameLabel" type="RichTextLabel" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]Luna"
+fit_content = true
+
+[node name="BackButton" type="Button" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("47_b6jxw")
+flat = true
+
+[node name="TaskContainer" type="ScrollContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/TaskContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/TaskContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tasks
+~WIP~"
+horizontal_alignment = 1
+
+[node name="SettingsContainer" type="ScrollContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/SettingsContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="tab_selected" from="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/TabBar" to="HBoxContainer/PlayerSheet" method="show_tab"]
 [connection signal="pressed" from="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/TimeButton" to="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/TimeButton" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer/HBoxContainer/Ding Button" to="Debug" method="ding"]
-[connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/VBoxContainer/HBoxContainer/SettingsButton" to="." method="_on_escape_requested"]
+[connection signal="tab_selected" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/TabBar" to="HBoxContainer/InfoPanel" method="show_tab"]
+[connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet/BackButton" to="HBoxContainer/InfoPanel/MarginContainer/InfoManager" method="show_contacts"]
+[connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/SettingsContainer/VBoxContainer/Button" to="." method="_on_escape_requested"]

@@ -13,8 +13,8 @@ func init_game(load_data : bool):
 func new_game():
 	%Debug.run_debug()
 	%LocationManager.go_to_location(starting_location)
-	%PlayerSheet.show_player_stats()
-	%ContactManager.show_contacts()
+	%PlayerSheet.inti_player_sheet()
+	%InfoPanel.init_info_panel()
 
 func load_game():
 	print("Continue?")

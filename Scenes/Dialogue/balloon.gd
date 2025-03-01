@@ -45,7 +45,7 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var balloon: Control = %Balloon
 
 ## The label showing the name of the currently speaking character
-@onready var character_label: Label = %CharacterLabel
+@onready var character_label: RichTextLabel = %CharacterLabel
 
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
@@ -53,6 +53,12 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+const day_theme = preload("res://Themes/day_theme.res")
+const night_theme = preload("res://Themes/night_theme.res")
+const day_texture = preload("res://Assets/UI/Frames/Day/Double_Main_Center.png")
+const night_texture = preload("res://Assets/UI/Frames/Night/Double_Main_Center.png")
+@onready var theme_controler : Control = %ThemeControler
+@onready var nine_path_rect : NinePatchRect = %NinePatchRect
 
 func _ready() -> void:
 	balloon.hide()
@@ -64,7 +70,17 @@ func _ready() -> void:
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
+	
+	TimeManager.time_change.connect(switch_theme)
+	switch_theme()
 
+func switch_theme():
+	if TimeManager.day_time:
+		theme_controler.theme = night_theme
+		nine_path_rect.texture = night_texture
+	else:
+		theme_controler.theme = day_theme
+		nine_path_rect.texture = day_texture
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
@@ -107,7 +123,7 @@ func apply_dialogue_line() -> void:
 		shown_character = Dialogue.actors[dialogue_line.character]
 
 	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = tr(shown_character.shown_name, "dialogue")
+	character_label.text = "[center]%s[/center]" % tr(shown_character.shown_name, "dialogue")
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

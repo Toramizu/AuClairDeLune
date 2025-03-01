@@ -1,4 +1,4 @@
-extends Control
+extends DayNightNinePatchRect
 
 @export var button : Button
 
@@ -8,6 +8,5 @@ func initialize(npc: NPCDefinition):
 	contact = npc
 	button.text = "  - %s" % npc.shown_name
 
-
 func _on_button_pressed():
-	print(contact.last_name)
+	SignalBus.show_contact_sheet.emit(contact)
