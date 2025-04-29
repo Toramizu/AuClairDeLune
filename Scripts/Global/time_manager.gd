@@ -40,8 +40,8 @@ var moon_phase : int :
 		return (total_time/2 + moon_delay) % 8
 
 
-var time_notes : Dictionary = {}
-var time_trigger : Dictionary = {}
+var time_notes : Dictionary[String, int] = {}
+var time_trigger : Dictionary[String, int] = {}
 
 func advance_time():
 	#Day-Night
@@ -58,6 +58,8 @@ func advance_time():
 				#Advance Year
 				month = 0
 				year += 1
+	if day_time == 0:
+		Player.earn_earnings()
 	time_change.emit()
 
 

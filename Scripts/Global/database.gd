@@ -2,8 +2,8 @@ extends Node
 
 var sorted_stats : Array[String]
 
-var stats : Dictionary
-var skills : Dictionary
+var stats : Dictionary[String, StatDefinition]
+var skills : Dictionary[String, SkillDefinition]
 var i : int
 
 func _ready():

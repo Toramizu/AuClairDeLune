@@ -45,6 +45,7 @@ func init_contact_list():
 		button.initialize(contact)
 
 func show_contacts():
+	npc_sheet.visible = false
 	contact_list.visible = true
 
 func show_contact(contact : NPCDefinition):

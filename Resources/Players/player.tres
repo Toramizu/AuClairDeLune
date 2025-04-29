@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerDefinition" load_steps=2 format=3 uid="uid://bl5hbtxk3o4sd"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/player_definition.gd" id="1_ccj6r"]
+[ext_resource type="Script" uid="uid://cjms4f2gaa78w" path="res://Scripts/Definitions/Characters/player_definition.gd" id="1_ccj6r"]
 
 [resource]
 script = ExtResource("1_ccj6r")
@@ -20,3 +20,6 @@ stats = {
 skills = {}
 tags = Array[String]([])
 flags = {}
+player_relationships = Array[String]([])
+friendship = 0.0
+attraction = 0.0

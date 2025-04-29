@@ -1,46 +1,46 @@
 [gd_scene load_steps=48 format=3 uid="uid://1b02b0y5mec4"]
 
-[ext_resource type="Script" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
-[ext_resource type="Script" path="res://Scripts/Game/game.gd" id="2_nuhtr"]
-[ext_resource type="Script" path="res://Scripts/UI/player_sheet.gd" id="4_s8eqs"]
+[ext_resource type="Script" uid="uid://ckuyuf2vy44ho" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
+[ext_resource type="Script" uid="uid://d3rvh6wgo11at" path="res://Scripts/Game/game.gd" id="2_nuhtr"]
+[ext_resource type="Script" uid="uid://b4oedbq8xf0mg" path="res://Scripts/UI/player_sheet.gd" id="4_s8eqs"]
 [ext_resource type="Resource" uid="uid://dkw2fy04hfsyx" path="res://Resources/Locations/test_location.tres" id="5_mui8h"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/Names/elven_name.gd" id="6_1kd78"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="6_uh1e5"]
-[ext_resource type="Script" path="res://Scripts/UI/hp_display.gd" id="7_cjlu2"]
+[ext_resource type="Script" uid="uid://du0aqxdvhtmcv" path="res://Scripts/Definitions/Rnd/Names/elven_name.gd" id="6_1kd78"]
+[ext_resource type="Script" uid="uid://cu1tqnhunhlj1" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="6_uh1e5"]
+[ext_resource type="Script" uid="uid://boj0ck1wnkwe1" path="res://Scripts/UI/hp_display.gd" id="7_cjlu2"]
 [ext_resource type="Resource" uid="uid://cgeyk0g5opgua" path="res://Resources/Characters/margaret.tres" id="7_eycma"]
 [ext_resource type="Resource" uid="uid://cp64kh2mun3b2" path="res://Resources/Characters/melody..tres" id="8_3ywly"]
 [ext_resource type="Theme" uid="uid://cebssi3strko3" path="res://Themes/day_theme.res" id="8_iladd"]
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="8_ukv28"]
-[ext_resource type="Script" path="res://Scripts/UI/theme_manager.gd" id="9_2k753"]
+[ext_resource type="Script" uid="uid://6b3xw6mgjfji" path="res://Scripts/UI/theme_manager.gd" id="9_2k753"]
 [ext_resource type="Texture2D" uid="uid://bidh73360j47" path="res://Assets/UI/Bars/GreenBar.png" id="9_aw8jr"]
-[ext_resource type="Texture2D" uid="uid://dupbxkl184vbs" path="res://Assets/UI/Frames/Day/Double_Main_Left.png" id="10_cwgk4"]
-[ext_resource type="Script" path="res://Scripts/UI/mp_display.gd" id="10_secsd"]
+[ext_resource type="Texture2D" uid="uid://dtelrfvwb4w3x" path="res://Assets/UI/Frames/Double_Main_Left.png" id="10_ej2vd"]
+[ext_resource type="Script" uid="uid://27e3dnlpvc54" path="res://Scripts/UI/mp_display.gd" id="10_secsd"]
 [ext_resource type="Texture2D" uid="uid://bldsclyiut4i6" path="res://Assets/UI/Bars/BlueBar.png" id="11_kco0d"]
-[ext_resource type="Script" path="res://Scripts/UI/ap_display.gd" id="12_b7nyy"]
+[ext_resource type="Script" uid="uid://dcttrd7bst35o" path="res://Scripts/UI/ap_display.gd" id="12_b7nyy"]
 [ext_resource type="Texture2D" uid="uid://chgpcdc714yhx" path="res://Assets/UI/Bars/PinkBar.png" id="13_mdaci"]
 [ext_resource type="Texture2D" uid="uid://1sdy8trpshw3" path="res://Assets/Asset Packs/TTrpg Legacy/treasures/gold_coin.png" id="14_on5pm"]
-[ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_manager.gd" id="15_avxts"]
+[ext_resource type="Script" uid="uid://cbh0wut4m3bi8" path="res://Scripts/Dialogue/dialogue_manager.gd" id="15_avxts"]
 [ext_resource type="Texture2D" uid="uid://b8qspswy5rp6r" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Mask/panel-border-029.png" id="16_i08ya"]
-[ext_resource type="Script" path="res://Scripts/Game/location_manager.gd" id="16_l3exk"]
+[ext_resource type="Script" uid="uid://cxbewhljo2mlc" path="res://Scripts/Game/location_manager.gd" id="16_l3exk"]
 [ext_resource type="Texture2D" uid="uid://cpp7u6jmbag48" path="res://Assets/UI/Icons/Skills.png" id="19_vfis4"]
 [ext_resource type="Texture2D" uid="uid://csx443o2j7k8" path="res://Assets/UI/Icons/Inventory.png" id="20_jwan3"]
 [ext_resource type="Texture2D" uid="uid://t0p7c58c2b5i" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_1.png" id="21_hywn1"]
 [ext_resource type="Texture2D" uid="uid://delvd4m7hg053" path="res://Assets/UI/Icons/duration.png" id="21_lhdey"]
-[ext_resource type="Script" path="res://Scripts/UI/time_button.gd" id="22_de5su"]
-[ext_resource type="Texture2D" uid="uid://dvst4ceth6hst" path="res://Assets/UI/Frames/Day/Double_Main_Center.png" id="22_ecj8g"]
-[ext_resource type="Script" path="res://Scripts/UI/moon_phase.gd" id="22_eqwls"]
+[ext_resource type="Script" uid="uid://bepcp6xtmjla5" path="res://Scripts/UI/time_button.gd" id="22_de5su"]
+[ext_resource type="Script" uid="uid://dvot3f4vck07k" path="res://Scripts/UI/moon_phase.gd" id="22_eqwls"]
+[ext_resource type="Texture2D" uid="uid://calf403ewwqk2" path="res://Assets/UI/Frames/Double_Main_Center.png" id="22_ot33i"]
 [ext_resource type="Texture2D" uid="uid://c7qg3usa41r1b" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_2.png" id="23_sauqs"]
-[ext_resource type="Script" path="res://Scripts/UI/time_label.gd" id="23_vn2e5"]
+[ext_resource type="Script" uid="uid://byd07yuuppkbe" path="res://Scripts/UI/time_label.gd" id="23_vn2e5"]
 [ext_resource type="Texture2D" uid="uid://cshkrolh1fjn7" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_3.png" id="24_3iu4m"]
 [ext_resource type="Texture2D" uid="uid://b60eaum72sv7" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_4.png" id="25_llkl7"]
 [ext_resource type="Texture2D" uid="uid://bmcv8axbckdwp" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_5.png" id="26_nqevj"]
 [ext_resource type="Texture2D" uid="uid://pbvo0m6r02g1" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_6.png" id="27_aif0j"]
 [ext_resource type="Texture2D" uid="uid://cpbnegk45u5oh" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_7.png" id="28_a4bjg"]
-[ext_resource type="Texture2D" uid="uid://c53e6wldkqwva" path="res://Assets/UI/Frames/Day/Double_Main_Right.png" id="28_fkmfg"]
+[ext_resource type="Texture2D" uid="uid://ds4faxr4g5704" path="res://Assets/UI/Frames/Double_Main_Right.png" id="28_qsnet"]
 [ext_resource type="Texture2D" uid="uid://di0ulh02ad8sg" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_8.png" id="29_r7v20"]
 [ext_resource type="Texture2D" uid="uid://de4aj0vyhhwid" path="res://Assets/UI/Icons/Settings.png" id="34_dg6kc"]
-[ext_resource type="Script" path="res://Scripts/Game/info_manager.gd" id="35_osvra"]
-[ext_resource type="Script" path="res://Scripts/UI/npc_sheet.gd" id="38_rptwl"]
+[ext_resource type="Script" uid="uid://cdc2ylgocsb6j" path="res://Scripts/Game/info_manager.gd" id="35_osvra"]
+[ext_resource type="Script" uid="uid://ddaj0aqba11d" path="res://Scripts/UI/npc_sheet.gd" id="38_rptwl"]
 [ext_resource type="Texture2D" uid="uid://p400eu6blp8r" path="res://Assets/UI/Icons/Contacts.png" id="38_t53cg"]
 [ext_resource type="Texture2D" uid="uid://b4c16chy6b0gg" path="res://Assets/UI/Icons/Tasks.png" id="39_8oggh"]
 [ext_resource type="Texture2D" uid="uid://dcc5imdxl40ji" path="res://Assets/Images/Melody.png" id="39_wcxgk"]
@@ -75,12 +75,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.690196, 0.866667, 0.85098, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("background", "main_left_panel", "main_center_panel", "main_right_panel")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_iladd")
@@ -90,12 +95,18 @@ background = NodePath("../Background")
 main_left_panel = NodePath("PlayerSheet")
 main_center_panel = NodePath("InteractionPanel")
 main_right_panel = NodePath("InfoPanel")
+day_color = Color(0.690196, 0.866667, 0.85098, 1)
+full_moon_color = Color(0.737255, 0.705882, 0.823529, 1)
+thrid_quarter_moon_color = Color(0.447059, 0.423529, 0.560784, 1)
+half_moon_color = Color(0.34902, 0.333333, 0.47451, 1)
+first_quarter_moon_color = Color(0.25098, 0.239216, 0.376471, 1)
+new_moon_color = Color(0.156863, 0.14902, 0.298039, 1)
 
 [node name="PlayerSheet" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "gold_label", "stats_container", "skill_container", "inventory_container")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("10_cwgk4")
+texture = ExtResource("10_ej2vd")
 patch_margin_left = 33
 patch_margin_top = 33
 patch_margin_right = 33
@@ -104,7 +115,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("4_s8eqs")
 name_label = NodePath("MarginContainer/VBoxContainer/Panel/VBoxContainer/NameLabel")
-gold_label = NodePath("MarginContainer/VBoxContainer/CurrencyContainer/GoldContainer/Label")
+gold_label = NodePath("MarginContainer/VBoxContainer/CurrencyContainer/GoldContainer/RichTextLabel")
 stats_container = NodePath("MarginContainer/VBoxContainer/StatsContainer")
 skill_container = NodePath("MarginContainer/VBoxContainer/SkillScrollContainer/SkillContainer")
 inventory_container = NodePath("MarginContainer/VBoxContainer/InventoryScrollContainer")
@@ -326,16 +337,25 @@ texture = ExtResource("14_on5pm")
 expand_mode = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/CurrencyContainer/GoldContainer"]
+visible = false
 layout_mode = 2
 text = "1000"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/CurrencyContainer/GoldContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "1000"
+fit_content = true
 vertical_alignment = 1
 
 [node name="InteractionPanel" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("22_ecj8g")
+texture = ExtResource("22_ot33i")
 patch_margin_left = 33
 patch_margin_top = 33
 patch_margin_right = 33
@@ -445,7 +465,7 @@ script = ExtResource("15_avxts")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("28_fkmfg")
+texture = ExtResource("28_qsnet")
 patch_margin_left = 33
 patch_margin_top = 33
 patch_margin_right = 33
@@ -637,5 +657,5 @@ text = "Quit"
 [connection signal="tab_selected" from="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/TabBar" to="HBoxContainer/PlayerSheet" method="show_tab"]
 [connection signal="pressed" from="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/TimeButton" to="HBoxContainer/InteractionPanel/Mask/LocationManager/LocationPanel/TimeButton" method="_on_pressed"]
 [connection signal="tab_selected" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/TabBar" to="HBoxContainer/InfoPanel" method="show_tab"]
-[connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet/BackButton" to="HBoxContainer/InfoPanel/MarginContainer/InfoManager" method="show_contacts"]
+[connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/NpcSheet/BackButton" to="HBoxContainer/InfoPanel" method="show_contacts"]
 [connection signal="pressed" from="HBoxContainer/InfoPanel/MarginContainer/InfoManager/VBoxContainer/SettingsContainer/VBoxContainer/Button" to="." method="_on_escape_requested"]

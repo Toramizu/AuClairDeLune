@@ -7,5 +7,5 @@ var npc : NPCDefinition
 
 func show_npc_stats(contact : NPCDefinition):
 	npc = contact
-	name_label.text = npc.shown_name
+	name_label.text = "[center]%s[/center]" % npc.shown_name
 	image_texture.texture = contact.image

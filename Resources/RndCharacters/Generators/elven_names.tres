@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ElvenNameGenerator" load_steps=2 format=3 uid="uid://yf5ru7xv06ap"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/Names/elven_name.gd" id="1_x0a4u"]
+[ext_resource type="Script" uid="uid://du0aqxdvhtmcv" path="res://Scripts/Definitions/Rnd/Names/elven_name.gd" id="1_x0a4u"]
 
 [resource]
 script = ExtResource("1_x0a4u")

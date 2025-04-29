@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="RndCharacterDefinition" load_steps=5 format=3 uid="uid://cdghqp5m1j6vm"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/rnd_character_definition.gd" id="1_7luss"]
+[ext_resource type="Script" uid="uid://ytxkm5gptyal" path="res://Scripts/Definitions/Characters/rnd_character_definition.gd" id="1_7luss"]
 [ext_resource type="Resource" uid="uid://yf5ru7xv06ap" path="res://Resources/RndCharacters/Generators/elven_names.tres" id="1_qy3em"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Rnd/stats_rnd.gd" id="2_kcf72"]
+[ext_resource type="Script" uid="uid://bk5t002w7tftu" path="res://Scripts/Definitions/Rnd/stats_rnd.gd" id="2_kcf72"]
 [ext_resource type="Resource" uid="uid://2s4qhcubwhlg" path="res://Resources/RndCharacters/base.tres" id="2_qja5w"]
 
 [resource]
@@ -11,6 +11,9 @@ id = ""
 parent = ExtResource("2_qja5w")
 name_generator = ExtResource("1_qy3em")
 name_gender = 1
+max_hp = 0
+max_mp = 0
+max_ap = 0
 stats = Array[ExtResource("2_kcf72")]([])
 skills = {}
 tags = Array[String]([])

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="NPCDefinition" load_steps=3 format=3 uid="uid://cgeyk0g5opgua"]
 
 [ext_resource type="Texture2D" uid="uid://csy66ru8n4kdv" path="res://Assets/Images/Margaret.png" id="1_ft3t6"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="1_vrkpr"]
+[ext_resource type="Script" uid="uid://cu1tqnhunhlj1" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="1_vrkpr"]
 
 [resource]
 script = ExtResource("1_vrkpr")

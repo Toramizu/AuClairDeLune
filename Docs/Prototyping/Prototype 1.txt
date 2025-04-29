@@ -1,0 +1,15 @@
+Prototype 1 : Basics of life
+
+People
+- Encounter new people
+- Meet acquaintances
+- Gain Trust
+
+Gold Management
+- Get job & pay
+- Living expenses
+
+Skill Checks
+- Default check
+- Work check
+- Skill progression

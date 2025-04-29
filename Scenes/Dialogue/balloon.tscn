@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d15ysak76f2ed"]
+[gd_scene load_steps=6 format=3 uid="uid://d15ysak76f2ed"]
 
-[ext_resource type="Script" path="res://Scenes/Dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://broj2bepamw2m" path="res://Scenes/Dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="Texture2D" uid="uid://stfy2ltwq5bl" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Double/Transparent center/panel-transparent-center-029.png" id="2_2fbej"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="4_mib23"]
+[ext_resource type="Texture2D" uid="uid://dcc5imdxl40ji" path="res://Assets/Images/Melody.png" id="5_us3mt"]
 
 [node name="Balloon" type="CanvasLayer"]
 layer = 100
@@ -14,6 +15,10 @@ unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -64,13 +69,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "[center]Dialogue..."
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="ThemeControler/NinePatchRect/Balloon/VBoxContainer" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="ThemeControler/NinePatchRect/Balloon/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 2
-script = ExtResource("3_72ixx")
-response_template = NodePath("ResponseExample")
+script = ExtResource("4_mib23")
 
 [node name="ResponseExample" type="Button" parent="ThemeControler/NinePatchRect/Balloon/VBoxContainer/ResponsesMenu"]
 layout_mode = 2
@@ -84,6 +88,27 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="Control" parent="ThemeControler/InfoPanel"]
+layout_mode = 2
+
+[node name="CharacterImage" type="TextureRect" parent="ThemeControler/InfoPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.5
+offset_top = -684.0
+offset_right = 175.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_us3mt")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ThemeControler/InfoPanel"]
 layout_mode = 2

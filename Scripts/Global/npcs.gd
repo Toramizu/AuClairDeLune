@@ -1,9 +1,9 @@
 extends Node
 
-var base_characters : Dictionary
+var base_characters : Dictionary[String, CharacterDefinition]
 var base_characters_tags : Dictionary
 
-var active_characters : Dictionary
+var active_characters : Dictionary[String, CharacterDefinition]
 var active_characters_tags : Dictionary
 
 var tags_search: String

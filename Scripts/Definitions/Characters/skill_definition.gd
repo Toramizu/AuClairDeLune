@@ -20,7 +20,7 @@ var color : Color :
 		else:
 			return Color.WEB_GRAY
 
-func _load_db(stats : Dictionary):
+func _load_db(stats : Dictionary[String, StatDefinition]):
 	if _main_stat:
 		main_stat = stats[_main_stat]
 	if _sub_stat:

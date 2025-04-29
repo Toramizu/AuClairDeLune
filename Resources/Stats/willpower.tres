@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StatDefinition" load_steps=2 format=3 uid="uid://drofxboghd804"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/stat_definition.gd" id="1_ktufo"]
+[ext_resource type="Script" uid="uid://dpc30hwxoc472" path="res://Scripts/Definitions/Characters/stat_definition.gd" id="1_ktufo"]
 
 [resource]
 script = ExtResource("1_ktufo")
@@ -8,4 +8,4 @@ id = "Wil"
 full_name = "Willpower"
 type = "Mind"
 color = Color(0.0666667, 0.454902, 0.87451, 1)
-order = 5.0
+order = 7.0

@@ -1,5 +1,12 @@
 extends Node
 
+class Earning:
+	var amount: int
+	var description: String
+	func _init(amnt: int, descr: String):
+		amount = amnt
+		description = descr
+
 const player_def: PlayerDefinition = preload("res://Resources/Players/test_player.tres")
 #const player_def: PlayerDefinition = preload("res://Resources/Players/player.tres")
 
@@ -8,6 +15,13 @@ var mp : int
 var ap : int
 
 var gold : int
+var earnings : Dictionary[String, Earning] = {}
+var total_earnings:
+	get:
+		var val = 0
+		for earn in earnings.values():
+			val += earn.amount
+		return val
 
 var character : PlayerDefinition
 
@@ -21,10 +35,10 @@ var shown_name : String :
 	get:
 		return character.shown_name
 
-var stats : Dictionary :
+var stats : Dictionary[String, int] :
 	get:
 		return character.stats
-var skills : Dictionary :
+var skills : Dictionary[String, int] :
 	get:
 		return character.skills
 
@@ -44,8 +58,9 @@ func _ready():
 	character._complete_load()
 	hp = character.max_hp
 	mp = character.max_mp
-	ap = 0
+	ap = character.max_ap
 	gold = character.starting_gold
+	earnings["Test"] = Earning.new(20, "Testing pay")
 
 func get_stat(stat: String) -> int:
 	return character.get_stat(stat)
@@ -66,3 +81,24 @@ func skill_check(skill: String, target: int) -> bool:
 		var rnd = Tools.roll()
 		#TODO : Increase Skill
 		return val + rnd >= target
+
+func earn_gold(amount: int):
+	gold += amount
+	SignalBus.gold_change.emit()
+
+func check_gold(amount: int):
+	return gold >= amount
+
+func add_earnings(id: String, amount: int, descr: String):
+	if amount == 0:
+		remove_earning(id)
+	else:
+		earnings[id] = Earning.new(amount, descr)
+		SignalBus.gold_change.emit()
+
+func remove_earning(id: String):
+	earnings.erase(id)
+	SignalBus.gold_change.emit()
+
+func earn_earnings():
+	earn_gold(total_earnings)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc6jl38f82r46"]
 
-[ext_resource type="Script" path="res://Scripts/UI/sublocation_button.gd" id="1_b17w1"]
+[ext_resource type="Script" uid="uid://cpq3x7ug7thic" path="res://Scripts/UI/sublocation_button.gd" id="1_b17w1"]
 
 [node name="LocationButton" type="Button"]
 offset_right = 20.0

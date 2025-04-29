@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillDefinition" load_steps=3 format=3 uid="uid://csyfavcyhqjms"]
 
 [ext_resource type="Texture2D" uid="uid://bjd0t7gudq6ci" path="res://Assets/Skills/survival.png" id="1_2pmc5"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_n6yds"]
+[ext_resource type="Script" uid="uid://mp52xy4l1700" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_n6yds"]
 
 [resource]
 script = ExtResource("1_n6yds")

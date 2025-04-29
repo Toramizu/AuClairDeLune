@@ -36,7 +36,7 @@ var dialogue_line: DialogueLine:
 		return dialogue_line
 
 ## The character currently talking
-var shown_character : CharacterDefinition
+var shown_character : NPCDefinition
 
 ## A cooldown timer for delaying the balloon hide when encountering a mutation.
 var mutation_cooldown: Timer = Timer.new()
@@ -46,6 +46,7 @@ var mutation_cooldown: Timer = Timer.new()
 
 ## The label showing the name of the currently speaking character
 @onready var character_label: RichTextLabel = %CharacterLabel
+@onready var character_image: TextureRect = %CharacterImage
 
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
@@ -124,6 +125,8 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = "[center]%s[/center]" % tr(shown_character.shown_name, "dialogue")
+	
+	character_image.texture = shown_character.image
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

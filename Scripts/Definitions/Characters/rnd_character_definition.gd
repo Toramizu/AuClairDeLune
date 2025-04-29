@@ -10,10 +10,10 @@ class_name RndCharacterDefinition extends Resource
 @export var max_ap : int
 
 @export var stats : Array[StatsRnd]
-@export var skills : Dictionary
+@export var skills : Dictionary[String, int]
 
 @export var tags : Array[String]
-@export var flags : Dictionary
+@export var flags : Dictionary[String, int]
 
 func create(new_id: String):
 	var chara

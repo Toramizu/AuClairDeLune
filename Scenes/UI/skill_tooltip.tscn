@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://chw12hlsllg87"]
 
-[ext_resource type="Script" path="res://Scripts/UI/skill_tooltip.gd" id="1_hx7u1"]
+[ext_resource type="Script" uid="uid://g6bk0ibap8cb" path="res://Scripts/UI/skill_tooltip.gd" id="1_hx7u1"]
 
 [node name="RichTextLabel" type="RichTextLabel"]
 offset_right = 40.0

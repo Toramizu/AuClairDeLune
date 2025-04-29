@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillDefinition" load_steps=3 format=3 uid="uid://btpclhrsacq3n"]
 
 [ext_resource type="Texture2D" uid="uid://ckkplfqpvp0nm" path="res://Assets/Skills/acrobatics.png" id="1_3h040"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="2_kks1g"]
+[ext_resource type="Script" uid="uid://mp52xy4l1700" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="2_kks1g"]
 
 [resource]
 script = ExtResource("2_kks1g")

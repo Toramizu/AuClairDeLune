@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillDefinition" load_steps=3 format=3 uid="uid://c3v5gbrhv08ft"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_odb81"]
+[ext_resource type="Script" uid="uid://mp52xy4l1700" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_odb81"]
 [ext_resource type="Texture2D" uid="uid://kru8q65rea3u" path="res://Assets/Skills/dance.png" id="1_rsqv0"]
 
 [resource]

@@ -11,11 +11,11 @@ var shown_name : String :
 		else:
 			return first_name
 
-@export var stats : Dictionary
-@export var skills : Dictionary
+@export var stats : Dictionary[String, int]
+@export var skills : Dictionary[String, int]
 
 @export var tags : Array[String]
-@export var flags : Dictionary
+@export var flags : Dictionary[String, int]
 
 @export var player_relationships : Array[String]
 @export var friendship : float
@@ -26,10 +26,10 @@ var max_hp : int :
 		return stats["Str"] + stats["Dex"] + stats["Con"]
 var max_mp : int :
 	get :
-		return stats["Int"] + stats["Wil"] + stats["Cha"]
+		return stats["Int"] + stats["Sen"] + stats["Wil"]
 var max_ap : int :
 	get :
-		return 100 #+ stats["Wil"]
+		return stats["Cha"] + stats["Lib"] + stats["Per"]
 
 func _complete_load():
 	for stat in Database.stats:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dw1vm22ls8tw8"]
 
 [ext_resource type="Texture2D" uid="uid://bpjw4v4pstm86" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Default/Transparent center/panel-transparent-center-001.png" id="1_j6kyl"]
-[ext_resource type="Script" path="res://Scripts/UI/contact_button.gd" id="2_hpajr"]
+[ext_resource type="Script" uid="uid://putmc2n3d0tu" path="res://Scripts/UI/contact_button.gd" id="2_hpajr"]
 
 [node name="ContactButton" type="NinePatchRect" node_paths=PackedStringArray("button")]
 custom_minimum_size = Vector2(75, 25)

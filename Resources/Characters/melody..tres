@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="NPCDefinition" load_steps=3 format=3 uid="uid://cp64kh2mun3b2"]
 
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="1_eh30v"]
+[ext_resource type="Script" uid="uid://cu1tqnhunhlj1" path="res://Scripts/Definitions/Characters/npc_definition.gd" id="1_eh30v"]
 [ext_resource type="Texture2D" uid="uid://dcc5imdxl40ji" path="res://Assets/Images/Melody.png" id="1_rl07d"]
 
 [resource]

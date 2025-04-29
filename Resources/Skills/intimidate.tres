@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillDefinition" load_steps=3 format=3 uid="uid://qmiarocki446"]
 
 [ext_resource type="Texture2D" uid="uid://bxgqxvqrsuhtl" path="res://Assets/Skills/intimidate.png" id="1_5exdo"]
-[ext_resource type="Script" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_7e5gs"]
+[ext_resource type="Script" uid="uid://mp52xy4l1700" path="res://Scripts/Definitions/Characters/skill_definition.gd" id="1_7e5gs"]
 
 [resource]
 script = ExtResource("1_7e5gs")

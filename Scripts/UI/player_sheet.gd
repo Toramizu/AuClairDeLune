@@ -1,7 +1,7 @@
 extends Control
 
 @export var name_label : RichTextLabel
-@export var gold_label : Label
+@export var gold_label : RichTextLabel
 @export var stats_container : Container
 
 @export var skill_container : Container
@@ -20,14 +20,15 @@ func inti_player_sheet():
 		var stat := stat_preload.instantiate()
 		stat.initialize(statsDB[stat_key], Player.get_stat(stat_key))
 		stats_container.add_child(stat)
-		
-	gold_label.text = "%d" % [Player.gold]
 	
 	var skillDB = Database.skills
 	for skill_key in Player.skills:
 		var skill := skill_preload.instantiate()
 		skill.initialize(skillDB[skill_key], Player.get_skill(skill_key))
 		skill_container.add_child(skill)
+	
+	display_gold()
+	SignalBus.gold_change.connect(display_gold)
 
 func show_tab(tab : int):
 	close_tabs()
@@ -45,3 +46,11 @@ func show_skills():
 
 func show_inventory():
 	inventory_container.visible = true
+
+func display_gold():
+	var earnings = Player.total_earnings
+	if earnings < 0:
+		gold_label.text = "%d [color=#f1220e](%d)[/color]" % [Player.gold, earnings]
+	else:
+		gold_label.text = "%d (%d)" % [Player.gold, earnings]
+	
