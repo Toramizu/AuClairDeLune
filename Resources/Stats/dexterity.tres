@@ -7,5 +7,5 @@ script = ExtResource("1_2ryvs")
 id = "Dex"
 full_name = "Dexterity"
 type = "Body"
-color = Color(0.921569, 0.25098, 0.203922, 1)
+color = Color(0.964706, 0.6, 0.247059, 1)
 order = 3.0

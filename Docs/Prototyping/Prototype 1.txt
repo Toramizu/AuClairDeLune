@@ -1,9 +1,9 @@
 Prototype 1 : Basics of life
 
 People
-- Encounter new people
-- Meet acquaintances
-- Gain Trust
+- Encounter new people +
+- Meet acquaintances +
+- Gain Trust -
 
 Gold Management
 - Get job & pay

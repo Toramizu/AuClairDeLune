@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationDefinition" load_steps=3 format=3 uid="uid://cc75qhn0fxnas"]
+
+[ext_resource type="Script" uid="uid://cbd256s32ysun" path="res://Scripts/Definitions/Locations/location_definition.gd" id="1_ent7p"]
+[ext_resource type="Script" uid="uid://bn5gyiq1yya15" path="res://Scripts/Definitions/Locations/sublocation_definition.gd" id="2_vcqqs"]
+
+[resource]
+script = ExtResource("1_ent7p")
+id = "ensoleille"
+full_name = "Ensoleille"
+sublocations = Array[ExtResource("2_vcqqs")]([null])
+metadata/_custom_type_script = "uid://cbd256s32ysun"

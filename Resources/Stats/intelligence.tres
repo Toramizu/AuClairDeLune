@@ -7,5 +7,5 @@ script = ExtResource("1_mahgh")
 id = "Int"
 full_name = "Intelligence"
 type = "Mind"
-color = Color(0, 0.815686, 0.152941, 1)
+color = Color(0.219608, 0.756863, 0.447059, 1)
 order = 1.0

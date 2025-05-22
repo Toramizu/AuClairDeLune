@@ -1,0 +1,68 @@
+Strength			Wrath
+Dexterity			Envy (Thief?)
+Constitution		Gluttony
+Intelligence		Sloth
+Sense				Greed (On their guard)
+Willpower			Pride
+Charm				*
+Lib					Lust
+Per					*
+
+
+Insight : Sen - Int
+Aro Max => Breakdown / Resolute check
+
+
+Sublocation safety :
+	Each sublocation has a safety rating :
+	- 1 (Palace, Guard house) : Perfectly protected, nothing bad could happen but higher chance to catch criminals
+	- 2 (Walled town, public places) : Low risks of bad things happening, but some misdemeanors (pickpockets, groping)
+	- 3 (Secluded places inside towns) : Humes and safer demons could pause problems, but nothing major
+	- 4 (Outside walls, villages) : Small chance of wilderness attacks, careful at night
+	- 5 (Wilderness) : High chance of encountering monsters
+	- 6 (Demonic) : High chance of encountering demons
+
+
+Goddesses :
+	Planet (Personality) (Moons)
+	- Sun (Tsundere) : The First Goddess. Lights the world. Said to protect the world with her light but is barely aware of the Humes
+	- Moon : Night's guardian. Terra's daughter, almost powerless, she uses the light of Sun to protect the Humes during the night
+
+	The 8 daughters
+	- Mercury (Hyper) (/) : 
+	- Venus (Feminine) (Maybe?) : 
+	- Terra (Motherly) (Moon) : Lost Daughter. Unknown by the Humes, she's the one who created them, nuture them and protects them, yet they don't realize it.
+	- Mars (Tomboy) (2 : Phobos (fear), Deimos (Dread)) : 
+	- Jupiter (Big Sister) (97) : 
+	- Saturn (Rich) (274, rings) : 
+	- Uranus (Smart) (28) : 
+	- Neptune (Cold) (16) : 
+	
+	Dwarf Planets
+	- Pluto (Rival/Antagonist/Brat) (5 : Charon) : The Impostor : Claims to be one of the Daughters, but isn't. Some Humes think she's the 8th, instead of Terra
+	- Ceres () () : ~ https://en.wikipedia.org/wiki/Ceres_(mythology) ~ Goddess of agriculture, grain crops, fertility and motherly relationships
+	- Orcus () () : ~ https://en.wikipedia.org/wiki/Orcus ~ God of the underworld, punisher of broken oaths
+	- Quaoar () () : ~ https://en.wikipedia.org/wiki/Chinigchinix ~ Tongva (American Indian) creator deity
+	- Gonggong () () : ~ https://en.wikipedia.org/wiki/Gonggong ~ Chinese Water God
+	- Sedna () (/) : ~ https://en.wikipedia.org/wiki/Sedna_(mythology) ~ Inuit sea Goddess
+	
+	Other Divines
+	- Huya
+	- Salacia
+	- Zooz (2002)
+	- (UX25)
+	- Varda
+	- 2013 FY
+
+
+
+Curses :
+	?
+
+
+
+4 Party Slots :
+	- Player
+	- Soulmate
+	- Pet
+	- Companion

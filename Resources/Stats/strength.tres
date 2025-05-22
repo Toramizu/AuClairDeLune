@@ -7,5 +7,5 @@ script = ExtResource("1_6bt6p")
 id = "Str"
 full_name = "Strength"
 type = "Body"
-color = Color(0.945098, 0.133333, 0.054902, 1)
+color = Color(0.890196, 0.203922, 0.184314, 1)
 order = 0.0

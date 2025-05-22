@@ -15,14 +15,15 @@ class_name RndCharacterDefinition extends Resource
 @export var tags : Array[String]
 @export var flags : Dictionary[String, int]
 
-func create(new_id: String):
+func create(new_id: String = ""):
 	var chara
 	if parent:
 		chara = parent.create(new_id)
 		chara.tags += tags
-		chara.flags += flags
+		for flag in flags:
+			chara.flags[flag] = flags[flag]
 	else:
-		chara = CharacterDefinition.new()
+		chara = NPCDefinition.new()
 		chara.id = new_id
 		chara.tags = tags.duplicate()
 		chara.flags = flags.duplicate()
@@ -31,12 +32,12 @@ func create(new_id: String):
 		chara.first_name = name_generator.generate_first_name(name_gender) #first_name.pick_random()
 		chara.last_name = name_generator.generate_last_name() #last_name.pick_random()
 	
-	chara.stats = {}
-	
-	chara.skills = {}
 	for skill in Database.skills:
 		if skill in skills:
-			chara.skills[skill] = Tools.roll() + 20 * skills[skill]
+			if skills[skill] > 0:
+				chara.skills[skill] = Tools.roll() + 20 * skills[skill]
 		else:
-			chara.skills[skill] = Tools.roll() + 20 * Database.skills[skill].default_level
+			if Database.skills[skill].start_value > 0:
+				chara.skills[skill] = Tools.roll() + 20 * Database.skills[skill].start_value
 	
+	return chara

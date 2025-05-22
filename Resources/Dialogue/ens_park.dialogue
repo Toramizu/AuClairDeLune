@@ -1,0 +1,11 @@
+~ start
+You are taking a stroll in the park.
+#- Talk to someone [color=#1EA7E1](5 MP)[/color] [if Player.mp >= 5] => meet
+- Talk to someone => meet
+- Leave => END
+=> END
+
+~ meet
+do Dialogue.by_actor("a1", Npcs.create_character("elf"))
+You talk to a cute girl for a while...
+a1: Hello, I'm {{Dialogue.a1.first_name}}!

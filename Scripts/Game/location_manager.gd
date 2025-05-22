@@ -26,3 +26,9 @@ func add_sublocation(sublocation: SubLocationDefinition):
 	var button = location_preload.instantiate()
 	location_panel.add_child(button)
 	button.set_sublocation(sublocation)
+
+func advance_time():
+	TimeManager.advance_time()
+
+func explore_location():
+	print("Explore!")

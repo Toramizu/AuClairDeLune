@@ -7,5 +7,5 @@ script = ExtResource("1_awryj")
 id = "Per"
 full_name = "Perversion"
 type = "Sexuality"
-color = Color(0.6, 0.231373, 0.921569, 1)
+color = Color(0.584314, 0.380392, 0.886275, 1)
 order = 5.0

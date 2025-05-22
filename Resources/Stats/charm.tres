@@ -7,5 +7,5 @@ script = ExtResource("1_3pnpa")
 id = "Cha"
 full_name = "Charm"
 type = "Sexuality"
-color = Color(0.921569, 0.443137, 0.776471, 1)
+color = Color(0.396078, 0.454902, 0.803922, 1)
 order = 2.0

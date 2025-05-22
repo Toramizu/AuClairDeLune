@@ -10,9 +10,29 @@ class Earning:
 const player_def: PlayerDefinition = preload("res://Resources/Players/test_player.tres")
 #const player_def: PlayerDefinition = preload("res://Resources/Players/player.tres")
 
-var hp : int
-var mp : int
-var ap : int
+enum Resource_Types {HEALTH, MENTAL, ARO}
+const resource_icons = ["🟡", "🔷", "💜"]
+var health : int
+var mental : int
+var aro : int
+var hp :
+	get :
+		return health
+	set(value) :
+		health = value
+		SignalBus.stats_changed.emit()
+var mp :
+	get :
+		return mental
+	set(value) :
+		mental = value
+		SignalBus.stats_changed.emit()
+var ap :
+	get :
+		return aro
+	set(value) :
+		aro = value
+		SignalBus.stats_changed.emit()
 
 var gold : int
 var earnings : Dictionary[String, Earning] = {}
@@ -22,6 +42,8 @@ var total_earnings:
 		for earn in earnings.values():
 			val += earn.amount
 		return val
+
+var sleep_location : SleepLocationDefinition
 
 var character : PlayerDefinition
 
@@ -71,17 +93,6 @@ func get_stat_mod(stat: String, sub: bool = false) -> int:
 func get_skill(skill: String) -> int:
 	return character.get_skill(skill)
 
-func skill_check(skill: String, target: int) -> bool:
-	var val = get_skill(skill)
-	if val >= target:
-		return true
-	elif val + 20 < target:
-		return false
-	else:
-		var rnd = Tools.roll()
-		#TODO : Increase Skill
-		return val + rnd >= target
-
 func earn_gold(amount: int):
 	gold += amount
 	SignalBus.gold_change.emit()
@@ -102,3 +113,35 @@ func remove_earning(id: String):
 
 func earn_earnings():
 	earn_gold(total_earnings)
+
+signal ask_for_roll(skill_id: String, difficulty: int)
+signal roll_complete()
+
+var roll = 0
+
+func old_skill_check(skill: String, target: int) -> bool:
+	var val = get_skill(skill)
+	if val >= target:
+		return true
+	elif val + 20 < target:
+		return false
+	else:
+		var rnd = Tools.roll()
+		#TODO : Increase Skill
+		return val + rnd >= target
+
+func do_skill_check(check: SkillCheck):
+	var val = get_skill(check.skill_id)
+	var t = -100
+	roll = 0
+	for target in check.targets:
+		if val + roll >= target:
+			if t < target : t = target
+		elif roll == 0:
+			ask_for_roll.emit(check.skill_id, target)
+			await roll_complete
+			#TODO : Notify skill improvement
+			character.skills[check.skill_id] += 1
+			if val + roll >= target:
+				if t < target : t = target
+	return t

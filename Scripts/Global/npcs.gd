@@ -1,6 +1,6 @@
 extends Node
 
-var base_characters : Dictionary[String, CharacterDefinition]
+var base_characters : Dictionary[String, RndCharacterDefinition]
 var base_characters_tags : Dictionary
 
 var active_characters : Dictionary[String, CharacterDefinition]
@@ -36,31 +36,65 @@ func _ready():
 	for id in contact_ids:
 		contacts.append(active_characters[id])
 
-func get_character_by_id(id: String):
+#Get character
+func get_character(id: String):
 	if active_characters.has(id):
 		return active_characters[id]
+	elif base_characters.has(id):
+		return base_characters[id]
 	else:
 		return null
 
-func get_character_by_tags(tags: Array[String]):
-	var lst = active_characters_tags[tags.pop_back()]
-	while tags:
-		tags_search = tags.pop_back()
-		lst.filter()
-	if lst:
-		return lst.pick_random()
+func get_character_by_tags(tags: Array[String] = [], create_chance: float = 0, create_if_none: bool = true):
+	if create_chance > randf():
+		return get_base_character(tags)
 	else:
-		return null
+		var chara = get_active_character(tags)
+		if not chara and create_if_none:
+			return get_base_character(tags)
+		else:
+			return chara
+
+func get_active_character(tags: Array[String] = []):
+	if tags:
+		var lst = active_characters_tags[tags.pop_back()]
+		while tags:
+			tags_search = tags.pop_back()
+			lst.filter()
+		if lst:
+			return lst.pick_random()
+		else:
+			return null
+	else:
+		return active_characters.values().pick_random()
+
+func get_base_character(tags: Array[String] = []):
+	if tags:
+		var lst = base_characters_tags[tags.pop_back()]
+		while tags:
+			tags_search = tags.pop_back()
+			lst.filter()
+		if lst:
+			return lst.pick_random()
+		else:
+			return null
+	else:
+		return base_characters.values().pick_random()
 
 func tag_filter(chara) -> bool:
 	return chara.tags.has(tags_search)
 
-func create_character(id: String, new_id: String, replace: bool = false):
-	if active_characters.has(new_id) and not replace:
-		return active_characters[new_id]
-	if base_characters.has(id):
-		var chara = base_characters[id].create()
+
+func create_character(base_id: String, new_id: String = "", override: bool = false):
+	if base_characters.has(base_id):
+		var chara = base_characters[base_id].create()
 		active_characters[new_id] = chara
+		if new_id:
+			save_character(chara, new_id, override)
 		return chara
 	else:
-		push_error("Character not found :  %s" % [id])
+		push_error("Character not found :  %s" % [base_id])
+
+func save_character(chara: CharacterDefinition, id: String, override: bool = false):
+	if not active_characters.has(id) or override:
+		active_characters[id] = chara

@@ -2,6 +2,7 @@ extends Control
 
 @export var name_label : RichTextLabel
 @export var gold_label : RichTextLabel
+@export var sleep_label : RichTextLabel
 @export var stats_container : Container
 
 @export var skill_container : Container
@@ -53,4 +54,12 @@ func display_gold():
 		gold_label.text = "%d [color=#f1220e](%d)[/color]" % [Player.gold, earnings]
 	else:
 		gold_label.text = "%d (%d)" % [Player.gold, earnings]
-	
+
+func display_sleep():
+	if Player.sleep_location:
+		sleep_label.text = Player.sleep_location.loc_name
+		sleep_label.tooltip_text = Player.sleep_location.details
+	else:
+		#TODO : Look for label in location
+		sleep_label.text = "None"
+		sleep_label.tooltip_text = ""

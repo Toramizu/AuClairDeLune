@@ -1,38 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw1vm22ls8tw8"]
+[gd_scene load_steps=4 format=3 uid="uid://dw1vm22ls8tw8"]
 
 [ext_resource type="Texture2D" uid="uid://bpjw4v4pstm86" path="res://Assets/Asset Packs/Kenney/Kenney Fantasy UI Borders/Default/Transparent center/panel-transparent-center-001.png" id="1_j6kyl"]
+[ext_resource type="Resource" uid="uid://dvkhjnvjxstjo" path="res://Resources/DB/friendship_db.tres" id="2_70476"]
 [ext_resource type="Script" uid="uid://putmc2n3d0tu" path="res://Scripts/UI/contact_button.gd" id="2_hpajr"]
 
-[node name="ContactButton" type="NinePatchRect" node_paths=PackedStringArray("button")]
-custom_minimum_size = Vector2(75, 25)
+[node name="ContactButton" type="MarginContainer" node_paths=PackedStringArray("chara_name", "icon_list")]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -10.0
-offset_bottom = 10.0
+offset_top = -30.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-mouse_filter = 1
+script = ExtResource("2_hpajr")
+chara_name = NodePath("MarginContainer/VBoxContainer/RichTextLabel")
+icon_list = NodePath("MarginContainer/VBoxContainer/Icons")
+friendship_db = ExtResource("2_70476")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
 texture = ExtResource("1_j6kyl")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
-script = ExtResource("2_hpajr")
-button = NodePath("Button")
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "  - Character (Friend)"
+layout_mode = 2
 flat = true
 alignment = 0
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+text = "Character Name"
+fit_content = true
+
+[node name="Icons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

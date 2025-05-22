@@ -7,5 +7,5 @@ script = ExtResource("1_ktufo")
 id = "Wil"
 full_name = "Willpower"
 type = "Mind"
-color = Color(0.0666667, 0.454902, 0.87451, 1)
+color = Color(0.203922, 0.564706, 0.862745, 1)
 order = 7.0

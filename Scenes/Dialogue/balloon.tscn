@@ -78,7 +78,7 @@ script = ExtResource("4_mib23")
 
 [node name="ResponseExample" type="Button" parent="ThemeControler/NinePatchRect/Balloon/VBoxContainer/ResponsesMenu"]
 layout_mode = 2
-text = "Response example"
+text = "Response example 🟡 🔷 💜"
 
 [node name="InfoPanel" type="MarginContainer" parent="ThemeControler"]
 layout_mode = 2

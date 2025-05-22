@@ -1,0 +1,35 @@
+Elemental System :
+- Natural Elements : Air, Earth, Water, Fire, Light, Dark, Metal, Magic
+- Kink Elements : O, V, T, C, A
+Each species are strong/weak against certain elements
+Strong means talking 50% less damage and gaining a buff
+Being weak means creating an opening
+The buff and opening are different for each element (Air => Speed+/-)
+
+When a character is open, you can use H attacks on them
+
+
+Party System :
+Your party is composed of 4 Characters
+- Player Character : You, always present
+- Companion : Permanent follower or only for a quest, generally a corruptible Hume
+- Pet : Tamed Monster, can disobey if badly trained
+- Soulmate : Only one per cycle, gives passive and random buffs and debuffs depending on the character
+
+
+
+
+
+
+STR		A + Earth
+DEX		H + Wind
+CON		T + Metal
+
+INT		All M
+SEN		M + Water
+WIL		V + Fire
+
+
+CHA		S
+PER		X Off
+LIB		X Def

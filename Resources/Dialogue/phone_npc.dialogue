@@ -1,0 +1,6 @@
+~ start
+a1: You call {{Dialogue.a1.first_name}}?
+- Talk
+	a1: Hello!
+- Cancel
+=> END
