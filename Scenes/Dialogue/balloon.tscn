@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dcc5imdxl40ji" path="res://Assets/Images/Melody.png" id="5_us3mt"]
 
 [node name="Balloon" type="CanvasLayer"]
-layer = 100
 script = ExtResource("1_36de5")
 
 [node name="ThemeControler" type="HBoxContainer" parent="."]

@@ -8,6 +8,6 @@ script = ExtResource("1_n6yds")
 id = "Sur"
 full_name = "Survival"
 icon = ExtResource("1_2pmc5")
-start_value = 10
+start_value = 1
 _main_stat = "Int"
 _sub_stat = "Sen"

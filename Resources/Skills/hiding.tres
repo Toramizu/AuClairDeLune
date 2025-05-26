@@ -8,6 +8,6 @@ script = ExtResource("1_wclgt")
 id = "Ste"
 full_name = "Stealth"
 icon = ExtResource("1_x5ffq")
-start_value = 10
+start_value = 1
 _main_stat = "Dex"
 _sub_stat = "Sen"

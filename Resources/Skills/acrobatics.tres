@@ -8,6 +8,6 @@ script = ExtResource("2_kks1g")
 id = "Acr"
 full_name = "Acrobatics"
 icon = ExtResource("1_3h040")
-start_value = 40
+start_value = 1
 _main_stat = "Dex"
 _sub_stat = "Str"

@@ -6,15 +6,21 @@ signal dice_rolled()
 @export var roll_label : RichTextLabel
 @export var difficulty_label : RichTextLabel
 
-var roll = 0
-var rolling = false
-var time = 0
+@export var success_label : RichTextLabel
+@export var failure_label : RichTextLabel
+
+var roll: int = 0
+var to_roll: int
+
+var rolling: bool = false
+var time: float = 0
 
 func debug_random_roll():
 	ask_for_roll("Dan", 20)
 
 func _ready():
 	Player.ask_for_roll.connect(ask_for_roll)
+	visible = false
 
 func _process(delta):
 	if rolling:
@@ -25,6 +31,8 @@ func _process(delta):
 			time = 0
 
 func ask_for_roll(skill_id: String, difficulty: int):
+	success_label.visible = false
+	failure_label.visible = false
 	visible = true
 	rolling = true
 	time = 0
@@ -32,7 +40,8 @@ func ask_for_roll(skill_id: String, difficulty: int):
 	var skill_value = Player.get_skill(skill_id)
 	skill_label.text = "%s : %d" % [skill.full_name, skill_value]
 	roll_label.text = ""
-	difficulty_label.text = "Difficulty : %d\n%d+" % [difficulty, difficulty - skill_value]
+	to_roll = difficulty - skill_value
+	difficulty_label.text = "Difficulty : %d\n%d+" % [difficulty, to_roll]
 	await dice_rolled
 	visible = false
 	Player.roll = roll
@@ -40,6 +49,14 @@ func ask_for_roll(skill_id: String, difficulty: int):
 
 func _on_dice_button_pressed():
 	if rolling:
-		rolling = false
+		get_roll()
 	else:
 		dice_rolled.emit()
+
+func get_roll():
+	rolling = false
+	print(roll)
+	if roll >= to_roll:
+		success_label.visible = true
+	else:
+		failure_label.visible = true

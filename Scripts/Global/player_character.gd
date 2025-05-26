@@ -119,20 +119,9 @@ signal roll_complete()
 
 var roll = 0
 
-func old_skill_check(skill: String, target: int) -> bool:
-	var val = get_skill(skill)
-	if val >= target:
-		return true
-	elif val + 20 < target:
-		return false
-	else:
-		var rnd = Tools.roll()
-		#TODO : Increase Skill
-		return val + rnd >= target
-
 func do_skill_check(check: SkillCheck):
 	var val = get_skill(check.skill_id)
-	var t = -100
+	var t = 0
 	roll = 0
 	for target in check.targets:
 		if val + roll >= target:

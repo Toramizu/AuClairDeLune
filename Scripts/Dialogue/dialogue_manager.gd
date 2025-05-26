@@ -7,11 +7,14 @@ func _ready():
 	SignalBus.end_dialogue.connect(end_dialogue)
 
 func start_dialogue(dialogue_resource: DialogueResource, dialogue_start: String):
+	Dialogue.current_dialogue= dialogue_resource
+	
 	%LocationManager.toggle_details(false)
 	%InfoPanel.toggle_details(false)
 	
 	var balloon: Node = Balloon.instantiate()
-	get_tree().current_scene.add_child(balloon)
+	#get_tree().current_scene.add_child(balloon)
+	add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
 
 func end_dialogue():

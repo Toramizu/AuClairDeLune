@@ -25,11 +25,24 @@ STR		A + Earth
 DEX		H + Wind
 CON		T + Metal
 
-INT		All M
-SEN		M + Water
+INT		M + All
+SEN		Touch + Water
 WIL		V + Fire
 
 
-CHA		S
-PER		X Off
+CHA		K
+PER		Kink
 LIB		X Def
+
+
+
+Health, Mana, Aura
+
+
+
+Combos :
+		Air		Earth	Water	Fire
+Air		/		Dust	Mist	Heat
+Earth	*		/		Mud		Lava
+Water	*		*		/		Steam
+Fire	*		*		*		/

@@ -8,6 +8,6 @@ script = ExtResource("2_i60ur")
 id = "Ath"
 full_name = "Athletics"
 icon = ExtResource("1_7oekg")
-start_value = 40
+start_value = 1
 _main_stat = "Str"
 _sub_stat = "Con"

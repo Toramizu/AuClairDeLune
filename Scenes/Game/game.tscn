@@ -507,20 +507,6 @@ mouse_filter = 2
 script = ExtResource("15_avxts")
 
 [node name="DiceRoller" parent="HBoxContainer/InteractionPanel" instance=ExtResource("51_bkdpl")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -92.0
-offset_right = 92.0
-offset_bottom = 92.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="InfoPanel" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("info_panel", "contact_list", "contact_button_container", "npc_sheet", "task_container", "settings_container")]
 unique_name_in_owner = true

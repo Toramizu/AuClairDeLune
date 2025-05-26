@@ -3,32 +3,35 @@
 [ext_resource type="Texture2D" uid="uid://2ypa5ih7asod" path="res://Assets/UI/Dice/D20.png" id="1_iammp"]
 [ext_resource type="Script" uid="uid://didqee7vb0kja" path="res://Scripts/UI/dice_roller.gd" id="2_2wcbe"]
 
-[node name="DiceRoller" type="Control" node_paths=PackedStringArray("skill_label", "roll_label", "difficulty_label")]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_2wcbe")
-skill_label = NodePath("VBoxContainer/SkillLabel")
-roll_label = NodePath("VBoxContainer/Control/RollLabel")
-difficulty_label = NodePath("VBoxContainer/DifficultyLabel")
+[node name="DiceRoller" type="CanvasLayer"]
+layer = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="DiceRoller" type="Control" parent="." node_paths=PackedStringArray("skill_label", "roll_label", "difficulty_label", "success_label", "failure_label")]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -180.0
+offset_top = -214.5
 offset_right = 250.0
-offset_bottom = 180.0
+offset_bottom = 214.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("2_2wcbe")
+skill_label = NodePath("SkillLabel")
+roll_label = NodePath("Control/RollLabel")
+difficulty_label = NodePath("DifficultyLabel")
+success_label = NodePath("SuccessLabel")
+failure_label = NodePath("FailureLabel")
 
-[node name="TopLabel" type="RichTextLabel" parent="VBoxContainer"]
-layout_mode = 2
+[node name="TopLabel" type="RichTextLabel" parent="DiceRoller"]
+offset_right = 500.0
+offset_bottom = 42.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -41,8 +44,10 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="SkillLabel" type="RichTextLabel" parent="VBoxContainer"]
-layout_mode = 2
+[node name="SkillLabel" type="RichTextLabel" parent="DiceRoller"]
+offset_top = 46.0
+offset_right = 500.0
+offset_bottom = 88.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -55,11 +60,16 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="DiceRoller"]
 custom_minimum_size = Vector2(184, 184)
-layout_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_top = 92.0
+offset_right = 500.0
+offset_bottom = 276.0
+mouse_filter = 2
 
-[node name="DiceButton" type="TextureButton" parent="VBoxContainer/Control"]
+[node name="DiceButton" type="TextureButton" parent="DiceRoller/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,7 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_iammp")
 
-[node name="RollLabel" type="RichTextLabel" parent="VBoxContainer/Control"]
+[node name="RollLabel" type="RichTextLabel" parent="DiceRoller/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,8 +102,10 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DifficultyLabel" type="RichTextLabel" parent="VBoxContainer"]
-layout_mode = 2
+[node name="DifficultyLabel" type="RichTextLabel" parent="DiceRoller"]
+offset_top = 280.0
+offset_right = 500.0
+offset_bottom = 322.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -105,4 +117,38 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Control/DiceButton" to="." method="_on_dice_button_pressed"]
+[node name="SuccessLabel" type="RichTextLabel" parent="DiceRoller"]
+visible = false
+offset_top = 326.0
+offset_right = 500.0
+offset_bottom = 429.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[rainbow freq=0.1 sat=0.5 val=0.8 speed=1.0]Success[/rainbow]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FailureLabel" type="RichTextLabel" parent="DiceRoller"]
+visible = false
+offset_top = 326.0
+offset_right = 500.0
+offset_bottom = 429.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[shake rate=10.0 level=4 connected=1]Failure[/shake]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="DiceRoller/Control/DiceButton" to="DiceRoller" method="_on_dice_button_pressed"]
