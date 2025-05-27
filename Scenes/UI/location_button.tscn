@@ -2,21 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cpq3x7ug7thic" path="res://Scripts/UI/sublocation_button.gd" id="1_b17w1"]
 
-[node name="LocationButton" type="Button" node_paths=PackedStringArray("label")]
+[node name="LocationButton" type="Button"]
 offset_right = 20.0
 offset_bottom = 20.0
+flat = true
 script = ExtResource("1_b17w1")
-label = NodePath("RichTextLabel")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-horizontal_alignment = 2
-vertical_alignment = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

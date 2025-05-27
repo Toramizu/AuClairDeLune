@@ -15,5 +15,5 @@ skills = Dictionary[String, int]({})
 tags = Array[String](["Elf"])
 flags = Dictionary[String, int]({})
 player_relationships = Array[String](["Friend"])
-trust = 0
-attraction = 8.0
+love = 0
+lust = 0

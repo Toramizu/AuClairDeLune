@@ -1,0 +1,27 @@
+~ start
+You are taking a stroll in the park.
+#- Talk to someone [color=#1EA7E1](5 MP)[/color] [if Player.mp >= 5] => meet
+- Talk to someone => meet
+- Run => run
+- Leave => END
+=> END
+
+~ meet
+do set_actor("a1", Npcs.create_character("elf"))
+You talk to a cute girl for a while...
+a1: Hello, I'm {{a1.first_name}}!
+=> END
+
+~ run
+You start running...
+do do_check("Ath", 20)
+if roll <= 0:
+	You barely manage to jog for ten minutes...
+elif roll <= 10:
+	You jogged for an hour. It was exhausting...
+elif roll <= 20:
+	You ran for an hour before going back home.
+else:
+	You finished your run by a sprint and impressed the onlookers.
+You go back home...
+=> END

@@ -1,0 +1,22 @@
+~ start
+do do_check("Mai", 30)
+if roll <= 10:
+	You completely failed your task...
+	do earn_gold(-2)
+elif roll <= 20:
+	You did a poor job.
+	do earn_gold(5)
+elif roll <= 30:
+	You did a decent job.
+	do earn_gold(8)
+else:
+	You did a good job!
+	do earn_gold(10)
+
+%1 => rand
+%9 => END
+=> END
+
+~ rand
+Random Event!
+=> END

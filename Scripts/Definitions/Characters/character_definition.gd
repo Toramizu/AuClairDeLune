@@ -18,8 +18,8 @@ var shown_name : String :
 @export var flags : Dictionary[String, int]
 
 @export var player_relationships : Array[String]
-@export var trust : int
-@export var attraction : int
+@export var love : int
+@export var lust : int
 
 var max_hp : int :
 	get :

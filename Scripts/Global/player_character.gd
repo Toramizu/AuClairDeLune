@@ -20,18 +20,24 @@ var hp :
 		return health
 	set(value) :
 		health = value
+		if health > max_hp:
+			health = max_hp
 		SignalBus.stats_changed.emit()
 var mp :
 	get :
 		return mental
 	set(value) :
 		mental = value
+		if mental > max_mp:
+			mental = max_mp
 		SignalBus.stats_changed.emit()
 var ap :
 	get :
 		return aro
 	set(value) :
 		aro = value
+		if aro > max_ap:
+			aro = max_ap
 		SignalBus.stats_changed.emit()
 
 var gold : int
@@ -74,6 +80,8 @@ var max_ap : int :
 	get:
 		return character.max_ap
 
+var day_work : WorkDefinition
+var night_work : WorkDefinition
 
 func _ready():
 	character = player_def.duplicate()
@@ -84,6 +92,13 @@ func _ready():
 	gold = character.starting_gold
 	earnings["Test"] = Earning.new(20, "Testing pay")
 
+#Resources
+func regen_resources() -> void:
+	hp += get_stat("Con")
+	mp += get_stat("Wil")
+	ap += get_stat("Lib")
+
+#Stats & Skills
 func get_stat(stat: String) -> int:
 	return character.get_stat(stat)
 
@@ -93,6 +108,11 @@ func get_stat_mod(stat: String, sub: bool = false) -> int:
 func get_skill(skill: String) -> int:
 	return character.get_skill(skill)
 
+func improve_skill(skill: String, amount: int = 1) -> void:
+	character.skills[skill] += amount
+	
+
+#Money
 func earn_gold(amount: int):
 	gold += amount
 	SignalBus.gold_change.emit()
@@ -114,23 +134,49 @@ func remove_earning(id: String):
 func earn_earnings():
 	earn_gold(total_earnings)
 
-signal ask_for_roll(skill_id: String, difficulty: int)
+#Skill checks
+signal ask_for_roll(skill_id: String, difficulty: int, improve_roll: int)
 signal roll_complete()
 
 var roll = 0
 
-func do_skill_check(check: SkillCheck):
+func do_skill_check(skill_id: String, target: int, improve: bool = true):
+	var val = get_skill(skill_id)
+	if val < target and val + 20 >= target:
+		var improve_roll = 0
+		if improve:
+			improve_roll = get_skill_up_roll(skill_id)
+		ask_for_roll.emit(skill_id, target, improve_roll)
+		await roll_complete
+		if improve and roll >= improve_roll:
+			#TODO : Skill improvement
+			improve_skill(skill_id, 1)
+		return val + roll
+	else:
+		return val
+
+func get_skill_up_roll(skill_id: String) -> int:
+	var r = 20 - get_stat(Database.skills[skill_id]._main_stat)
+	if r > 20:
+		return 20
+	elif r < 1:
+		return 1
+	return r
+
+func OLD_do_skill_check(check: SkillCheck):
 	var val = get_skill(check.skill_id)
 	var t = 0
 	roll = 0
 	for target in check.targets:
 		if val + roll >= target:
-			if t < target : t = target
-		elif roll == 0:
-			ask_for_roll.emit(check.skill_id, target)
+			if t < target :
+				t = target
+		elif val + 20 >= target and roll == 0:
+			ask_for_roll.emit(check.skill_id, target, 0)
 			await roll_complete
 			#TODO : Notify skill improvement
 			character.skills[check.skill_id] += 1
 			if val + roll >= target:
-				if t < target : t = target
+				if t < target :
+					t = target
 	return t

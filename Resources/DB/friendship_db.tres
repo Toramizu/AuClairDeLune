@@ -1,22 +1,20 @@
 [gd_resource type="Resource" script_class="FriendshipDB" load_steps=12 format=3 uid="uid://dvkhjnvjxstjo"]
 
 [ext_resource type="Script" uid="uid://b0l50glsyh7rs" path="res://Scripts/Definitions/DB/friendship_db.gd" id="1_3sx30"]
-[ext_resource type="Texture2D" uid="uid://cdvxs61y75qwk" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_79.png" id="1_53a0u"]
-[ext_resource type="Texture2D" uid="uid://cex7q2xmssb2o" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_80.png" id="2_308yc"]
-[ext_resource type="Texture2D" uid="uid://bv3mffi1503gt" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_88.png" id="3_nnbqh"]
+[ext_resource type="Texture2D" uid="uid://cnjrpcimjr3gv" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_46.png" id="2_53a0u"]
 [ext_resource type="Texture2D" uid="uid://dq8x41wd3s0ic" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_83.png" id="4_78oym"]
 [ext_resource type="Texture2D" uid="uid://cthlctgjse8li" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_86.png" id="5_7b1bd"]
+[ext_resource type="Texture2D" uid="uid://bkhaenak1ijef" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_65.png" id="6_308yc"]
+[ext_resource type="Texture2D" uid="uid://dl6vltk1m5ljd" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_10.png" id="7_nnbqh"]
 [ext_resource type="Texture2D" uid="uid://dyj6y6fx7cn1f" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_73.png" id="7_udva3"]
-[ext_resource type="Texture2D" uid="uid://w2pepa1ndb8t" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_1.png" id="8_a4px8"]
+[ext_resource type="Texture2D" uid="uid://ecg7einqmsgy" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_21.png" id="9_78oym"]
 [ext_resource type="Texture2D" uid="uid://cjipbnpv0huhw" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_67.png" id="9_tn8n0"]
 [ext_resource type="Texture2D" uid="uid://ylhxpuxlk5ki" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_49.png" id="10_0bg0n"]
-[ext_resource type="Texture2D" uid="uid://dh1orpkt14oql" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_6.png" id="11_rwj88"]
+[ext_resource type="Texture2D" uid="uid://dom7wxjceoakg" path="res://Assets/Asset Packs/emoji_comic_pack_Joyquest_2.0/outline_emojis/em_outline_85.png" id="10_7b1bd"]
 
 [resource]
 script = ExtResource("1_3sx30")
 ranks = 5
-trust_names = Array[String](["Ennemy", "Displeased", "Neutral", "Friendly", "BFF"])
-trust_icons = Array[Texture]([ExtResource("7_udva3"), ExtResource("8_a4px8"), ExtResource("9_tn8n0"), ExtResource("10_0bg0n"), ExtResource("11_rwj88")])
-attraction_names = Array[String](["Disgusted", "Uninterested", "Neutral", "Attracted", "In Love"])
-attraction_icons = Array[Texture]([ExtResource("1_53a0u"), ExtResource("2_308yc"), ExtResource("3_nnbqh"), ExtResource("4_78oym"), ExtResource("5_7b1bd")])
+love_icons = Array[Texture]([ExtResource("7_udva3"), ExtResource("2_53a0u"), ExtResource("10_0bg0n"), ExtResource("4_78oym"), ExtResource("5_7b1bd")])
+lust_icons = Array[Texture]([ExtResource("6_308yc"), ExtResource("7_nnbqh"), ExtResource("9_tn8n0"), ExtResource("9_78oym"), ExtResource("10_7b1bd")])
 metadata/_custom_type_script = "uid://b0l50glsyh7rs"

@@ -7,3 +7,5 @@ signal show_contact_sheet(contact : NPCDefinition)
 
 signal stats_changed()
 signal gold_change()
+
+signal advance_time()

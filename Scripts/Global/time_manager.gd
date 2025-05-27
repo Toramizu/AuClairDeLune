@@ -43,6 +43,9 @@ var moon_phase : int :
 var time_notes : Dictionary[String, int] = {}
 var time_trigger : Dictionary[String, int] = {}
 
+func _ready():
+	SignalBus.advance_time.connect(advance_time)
+
 func advance_time():
 	#Day-Night
 	day_time += 1
@@ -58,8 +61,17 @@ func advance_time():
 				#Advance Year
 				month = 0
 				year += 1
-	if day_time == 0:
-		Player.earn_earnings()
+	time_advanced()
+
+func time_advanced():
+	Player.regen_resources()
+	if day_time == 1:
+		if Player.day_work:
+			Player.day_work.do_work()
+	else:
+		if Player.night_work:
+			Player.night_work.do_work()
+	
 	time_change.emit()
 
 

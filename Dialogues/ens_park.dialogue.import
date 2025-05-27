@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cn20mepld8ka0"
+path="res://.godot/imported/ens_park.dialogue-4e05f31fcb8afa84f59d49b495754891.tres"
+
+[deps]
+
+source_file="res://Dialogues/ens_park.dialogue"
+dest_files=["res://.godot/imported/ens_park.dialogue-4e05f31fcb8afa84f59d49b495754891.tres"]
+
+[params]
+
+defaults=true

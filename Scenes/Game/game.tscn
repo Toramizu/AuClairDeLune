@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=54 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Script" uid="uid://ckuyuf2vy44ho" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
 [ext_resource type="Script" uid="uid://d3rvh6wgo11at" path="res://Scripts/Game/game.gd" id="2_nuhtr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://boj0ck1wnkwe1" path="res://Scripts/UI/hp_display.gd" id="7_cjlu2"]
 [ext_resource type="Resource" uid="uid://cgeyk0g5opgua" path="res://Resources/Characters/margaret.tres" id="7_eycma"]
 [ext_resource type="Resource" uid="uid://cp64kh2mun3b2" path="res://Resources/Characters/melody..tres" id="8_3ywly"]
+[ext_resource type="Resource" uid="uid://bu0vftwgycefa" path="res://Resources/Work/warm_embrace_maid.tres" id="8_caws5"]
 [ext_resource type="Theme" uid="uid://cebssi3strko3" path="res://Themes/day_theme.res" id="8_iladd"]
 [ext_resource type="Texture2D" uid="uid://bmv8b3rmesbci" path="res://Assets/UI/Bars/EmptyBar.png" id="8_ukv28"]
 [ext_resource type="Script" uid="uid://6b3xw6mgjfji" path="res://Scripts/UI/theme_manager.gd" id="9_2k753"]
@@ -46,11 +47,11 @@
 [ext_resource type="Texture2D" uid="uid://b4c16chy6b0gg" path="res://Assets/UI/Icons/Tasks.png" id="39_8oggh"]
 [ext_resource type="Texture2D" uid="uid://dcc5imdxl40ji" path="res://Assets/Images/Melody.png" id="39_wcxgk"]
 [ext_resource type="PackedScene" uid="uid://dw1vm22ls8tw8" path="res://Scenes/UI/contact_button.tscn" id="41_u8123"]
-[ext_resource type="Resource" uid="uid://52pgwk3hui2i" path="res://Resources/Dialogue/phone_npc.dialogue" id="46_tn4br"]
+[ext_resource type="Resource" uid="uid://52pgwk3hui2i" path="res://Dialogues/phone_npc.dialogue" id="46_tn4br"]
 [ext_resource type="Texture2D" uid="uid://dk8fsbx1dtgo1" path="res://Assets/UI/Icons/Leave.png" id="47_tn4br"]
 [ext_resource type="Texture2D" uid="uid://cavadpv4h8y04" path="res://Assets/UI/Icons/Phone.png" id="49_tn4br"]
 [ext_resource type="Script" uid="uid://0yo2h3qi7u6g" path="res://Scripts/UI/phone_button.gd" id="50_rht7h"]
-[ext_resource type="PackedScene" uid="uid://c77lmyc1i6po2" path="res://Scenes/dice_roller.tscn" id="51_bkdpl"]
+[ext_resource type="PackedScene" uid="uid://c77lmyc1i6po2" path="res://Scenes/UI/dice_roller.tscn" id="51_bkdpl"]
 
 [sub_resource type="Resource" id="Resource_41u3y"]
 script = ExtResource("6_1kd78")
@@ -72,6 +73,7 @@ unique_name_in_owner = true
 script = ExtResource("2_4ua2w")
 generator = SubResource("Resource_41u3y")
 npcs = Array[ExtResource("6_uh1e5")]([ExtResource("7_eycma"), ExtResource("8_3ywly")])
+test_work = ExtResource("8_caws5")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -497,6 +499,7 @@ flat = true
 
 [node name="DialogueManager" type="Control" parent="HBoxContainer/InteractionPanel/Mask"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

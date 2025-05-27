@@ -9,17 +9,17 @@ id = "player"
 first_name = "Luna"
 last_name = "Moonlight"
 nickname = ""
-stats = {
+stats = Dictionary[String, int]({
 "Cha": 10,
 "Con": 10,
 "Dex": 10,
 "Int": 10,
 "Str": 10,
 "Wil": 10
-}
-skills = {}
+})
+skills = Dictionary[String, int]({})
 tags = Array[String]([])
-flags = {}
+flags = Dictionary[String, int]({})
 player_relationships = Array[String]([])
-friendship = 0.0
-attraction = 0.0
+love = 0
+lust = 0

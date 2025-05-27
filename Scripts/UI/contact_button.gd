@@ -15,15 +15,15 @@ func initialize(npc: NPCDefinition):
 	var t_icon = TextureRect.new()
 	icon_list.add_child(t_icon)
 	@warning_ignore("integer_division")
-	var val = (npc.trust + 100) / i
-	t_icon.texture = friendship_db.trust_icons[val]
-	t_icon.tooltip_text = "Trust : %d (%s)" % [npc.trust, friendship_db.trust_names[val]]
+	var val = (npc.love + 100) / i
+	t_icon.texture = friendship_db.love_icons[val]
+	t_icon.tooltip_text = "Love : %d" % [npc.love]
 	var a_icon = TextureRect.new()
 	icon_list.add_child(a_icon)
 	@warning_ignore("integer_division")
-	val = (npc.attraction + 100) / i
-	a_icon.texture = friendship_db.attraction_icons[val]
-	a_icon.tooltip_text = "Attraction : %d (%s)" % [npc.attraction, friendship_db.attraction_names[val]]
+	val = (npc.lust + 100) / i
+	a_icon.texture = friendship_db.lust_icons[val]
+	a_icon.tooltip_text = "Lust : %d" % [npc.lust]
 
 func _on_button_pressed():
 	SignalBus.show_contact_sheet.emit(contact)

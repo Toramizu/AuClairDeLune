@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bsm4bdxi4bbwt"
+path="res://.godot/imported/warm_embrace_maid.dialogue-3dba7dfbbd53bb2730ff00ba916a0c2e.tres"
+
+[deps]
+
+source_file="res://Dialogues/Work/warm_embrace_maid.dialogue"
+dest_files=["res://.godot/imported/warm_embrace_maid.dialogue-3dba7dfbbd53bb2730ff00ba916a0c2e.tres"]
+
+[params]
+
+defaults=true
