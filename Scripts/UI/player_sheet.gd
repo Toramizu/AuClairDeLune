@@ -1,6 +1,7 @@
 extends Control
 
 @export var name_label : RichTextLabel
+@export var gold_container : Control
 @export var gold_label : RichTextLabel
 @export var sleep_label : RichTextLabel
 @export var stats_container : Container
@@ -11,6 +12,9 @@ extends Control
 
 var stat_preload = preload("res://Scenes/UI/stat_label.tscn")
 var skill_preload = preload("res://Scenes/UI/skill_label.tscn")
+
+#Temp
+@export var food_expense : DailyGold
 
 func inti_player_sheet():
 	show_tab(0)
@@ -27,6 +31,10 @@ func inti_player_sheet():
 		var skill := skill_preload.instantiate()
 		skill.initialize(skillDB[skill_key], Player.get_skill(skill_key))
 		skill_container.add_child(skill)
+	
+	Player.dailies.append(food_expense)
+	Player.dailies.append(food_expense)
+	Player.dailies.append(food_expense)
 	
 	display_gold()
 	SignalBus.gold_change.connect(display_gold)
@@ -49,11 +57,19 @@ func show_inventory():
 	inventory_container.visible = true
 
 func display_gold():
-	var earnings = Player.total_earnings
+	var earnings = 0
+	var tooltip = ""
+	for daily in Player.dailies:
+		earnings += daily.amount
+		if daily.amount < 0:
+			tooltip += "%s : [color=#bf1029]%d[/color]\n" % [daily.summary, daily.amount]
+		else:
+			tooltip += "%s : [color=#3f8f29]%d[/color]\n" % [daily.summary, daily.amount]
 	if earnings < 0:
-		gold_label.text = "%d [color=#f1220e](%d)[/color]" % [Player.gold, earnings]
+		gold_label.text = "%d [color=#bf1029](%d)[/color]" % [Player.gold, earnings]
 	else:
-		gold_label.text = "%d (%d)" % [Player.gold, earnings]
+		gold_label.text = "%d [color=#3f8f29](%d)[/color]" % [Player.gold, earnings]
+	gold_container.tooltip_text = tooltip
 
 func display_sleep():
 	if Player.sleep_location:

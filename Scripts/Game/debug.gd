@@ -7,7 +7,7 @@ extends Node
 
 func run_debug():
 	Npcs.contacts = npcs
-	Player.day_work = test_work
+	Player.set_work(test_work, true)
 	Player.character.skills["Mai"] = 20
 
 func roll_test():

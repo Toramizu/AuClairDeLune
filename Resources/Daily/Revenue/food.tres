@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DailyGold" load_steps=3 format=3 uid="uid://4utysrjrur3v"]
+
+[ext_resource type="Script" uid="uid://drek2q6yxe12" path="res://Scripts/Definitions/Daily/daily_gold.gd" id="1_ikwx3"]
+[ext_resource type="Resource" uid="uid://bh1gd3uvnjgkk" path="res://Dialogues/Daily/Expenses/Food.dialogue" id="1_wovll"]
+
+[resource]
+script = ExtResource("1_ikwx3")
+id = "Food"
+dialogue = ExtResource("1_wovll")
+dialogue_start = "start"
+summary = "Food"
+amount = -2
+metadata/_custom_type_script = "uid://drek2q6yxe12"

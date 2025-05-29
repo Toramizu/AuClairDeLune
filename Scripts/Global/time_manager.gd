@@ -71,6 +71,7 @@ func time_advanced():
 	else:
 		if Player.night_work:
 			Player.night_work.do_work()
+		Player.pay_expenses()
 	
 	time_change.emit()
 

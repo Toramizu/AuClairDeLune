@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bh1gd3uvnjgkk"
+path="res://.godot/imported/Food.dialogue-af31a0e79410aa0c7b91e0b07d231a06.tres"
+
+[deps]
+
+source_file="res://Dialogues/Daily/Expenses/Food.dialogue"
+dest_files=["res://.godot/imported/Food.dialogue-af31a0e79410aa0c7b91e0b07d231a06.tres"]
+
+[params]
+
+defaults=true

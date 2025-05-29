@@ -1,0 +1,6 @@
+~ start
+if Player.gold < 2
+	You don't have enough gold...
+else
+	do Player.earn_gold(-2)
+=> END

@@ -1,6 +1,4 @@
-extends DayNightNinePatchRect
-
-const tooltip_scene: PackedScene = preload("res://Scenes/UI/skill_tooltip.tscn")
+extends BetterTooltip
 
 @export var label : Label
 
@@ -14,12 +12,16 @@ func initialize(_skill: SkillDefinition, value:int):
 	tooltip_text = skill.id
 	
 	set_value(value)
+	set_tooltip()
 
 func set_value(value: int):
 	label.text = "%s : %d" % [skill.id, value]
 
-func _make_custom_tooltip(_for_text) -> Control:
-	var tooltip = tooltip_scene.instantiate()
-	#var skill = Database.skills[for_text]
-	tooltip.set_text(skill)
-	return tooltip
+func set_tooltip():
+	var tooltip = "[font_size=18][b]%s[/b] (%d)[/font_size]\nLearned : %d" % [skill.full_name, Player.get_skill(skill.id), Player.skills[skill.id]]
+	if skill.main_stat:
+		tooltip += "\nMain (%s) : %d" % [skill._main_stat, Player.get_stat_mod(skill.main_stat.id)]
+	if skill.sub_stat:
+		tooltip += "\nSub (%s/2) : %d" % [skill._sub_stat, Player.get_stat_mod(skill.sub_stat.id, true)]
+	
+	tooltip_text = tooltip

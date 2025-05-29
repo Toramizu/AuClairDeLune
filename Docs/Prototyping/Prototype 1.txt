@@ -6,8 +6,8 @@ People
 - Gain Trust -
 
 Gold Management
-- Get job & pay 
-- Living expenses 
+- Get job & pay +
+- Living expenses +
 
 Skill Checks
 - Default check +

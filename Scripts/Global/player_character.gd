@@ -1,12 +1,5 @@
 extends Node
 
-class Earning:
-	var amount: int
-	var description: String
-	func _init(amnt: int, descr: String):
-		amount = amnt
-		description = descr
-
 const player_def: PlayerDefinition = preload("res://Resources/Players/test_player.tres")
 #const player_def: PlayerDefinition = preload("res://Resources/Players/player.tres")
 
@@ -41,12 +34,12 @@ var ap :
 		SignalBus.stats_changed.emit()
 
 var gold : int
-var earnings : Dictionary[String, Earning] = {}
-var total_earnings:
+var dailies : Array[DailyGold]
+var total_dailies:
 	get:
 		var val = 0
-		for earn in earnings.values():
-			val += earn.amount
+		for daily in dailies:
+			val += daily.amount
 		return val
 
 var sleep_location : SleepLocationDefinition
@@ -90,7 +83,6 @@ func _ready():
 	mp = character.max_mp
 	ap = character.max_ap
 	gold = character.starting_gold
-	earnings["Test"] = Earning.new(20, "Testing pay")
 
 #Resources
 func regen_resources() -> void:
@@ -120,19 +112,33 @@ func earn_gold(amount: int):
 func check_gold(amount: int):
 	return gold >= amount
 
-func add_earnings(id: String, amount: int, descr: String):
-	if amount == 0:
-		remove_earning(id)
+func add_daily(daily: DailyGold):
+	dailies.append(daily)
+
+func remove_daily(id: String):
+	for daily in dailies:
+		if daily.id == id:
+			dailies.erase(daily)
+
+func get_dailies():
+	for daily in dailies:
+		if daily.dialogue:
+			SignalBus.start_dialogue.emit(daily.dialogue, daily.dialogue_start)
+			await DialogueManager.dialogue_ended
+		else:
+			Player.earn_gold(-daily.amount)
+		print(daily.summary)
+
+func set_work(work: WorkDefinition, daytime: bool):
+	if daytime:
+		if day_work:
+			dailies.erase(day_work)
+		day_work = work
 	else:
-		earnings[id] = Earning.new(amount, descr)
-		SignalBus.gold_change.emit()
-
-func remove_earning(id: String):
-	earnings.erase(id)
-	SignalBus.gold_change.emit()
-
-func earn_earnings():
-	earn_gold(total_earnings)
+		if night_work:
+			dailies.erase(night_work)
+		night_work = work
+	add_daily(work)
 
 #Skill checks
 signal ask_for_roll(skill_id: String, difficulty: int, improve_roll: int)
@@ -162,21 +168,3 @@ func get_skill_up_roll(skill_id: String) -> int:
 	elif r < 1:
 		return 1
 	return r
-
-func OLD_do_skill_check(check: SkillCheck):
-	var val = get_skill(check.skill_id)
-	var t = 0
-	roll = 0
-	for target in check.targets:
-		if val + roll >= target:
-			if t < target :
-				t = target
-		elif val + 20 >= target and roll == 0:
-			ask_for_roll.emit(check.skill_id, target, 0)
-			await roll_complete
-			#TODO : Notify skill improvement
-			character.skills[check.skill_id] += 1
-			if val + roll >= target:
-				if t < target :
-					t = target
-	return t

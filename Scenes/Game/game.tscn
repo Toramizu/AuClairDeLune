@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://1b02b0y5mec4"]
+[gd_scene load_steps=56 format=3 uid="uid://1b02b0y5mec4"]
 
 [ext_resource type="Script" uid="uid://ckuyuf2vy44ho" path="res://Scripts/Game/debug.gd" id="2_4ua2w"]
 [ext_resource type="Script" uid="uid://d3rvh6wgo11at" path="res://Scripts/Game/game.gd" id="2_nuhtr"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://27e3dnlpvc54" path="res://Scripts/UI/mp_display.gd" id="10_secsd"]
 [ext_resource type="Texture2D" uid="uid://bldsclyiut4i6" path="res://Assets/UI/Bars/BlueBar.png" id="11_kco0d"]
 [ext_resource type="Script" uid="uid://dcttrd7bst35o" path="res://Scripts/UI/ap_display.gd" id="12_b7nyy"]
+[ext_resource type="Resource" uid="uid://4utysrjrur3v" path="res://Resources/Daily/Revenue/food.tres" id="13_2r0uj"]
 [ext_resource type="Texture2D" uid="uid://chgpcdc714yhx" path="res://Assets/UI/Bars/PinkBar.png" id="13_mdaci"]
 [ext_resource type="Texture2D" uid="uid://6wt0mr0pxi7n" path="res://Assets/UI/Bars/YellowBar.png" id="14_j8rd5"]
 [ext_resource type="Script" uid="uid://cbh0wut4m3bi8" path="res://Scripts/Dialogue/dialogue_manager.gd" id="15_avxts"]
@@ -29,6 +30,7 @@
 [ext_resource type="Script" uid="uid://dvot3f4vck07k" path="res://Scripts/UI/moon_phase.gd" id="22_eqwls"]
 [ext_resource type="Texture2D" uid="uid://bweuvvdltoybc" path="res://Assets/UI/Icons/Bed.png" id="22_j8rd5"]
 [ext_resource type="Texture2D" uid="uid://calf403ewwqk2" path="res://Assets/UI/Frames/Double_Main_Center.png" id="22_ot33i"]
+[ext_resource type="Script" uid="uid://dtpn101k8v4la" path="res://Scripts/UI/better_tooltip.gd" id="23_entp3"]
 [ext_resource type="Texture2D" uid="uid://c7qg3usa41r1b" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_2.png" id="23_sauqs"]
 [ext_resource type="Script" uid="uid://byd07yuuppkbe" path="res://Scripts/UI/time_label.gd" id="23_vn2e5"]
 [ext_resource type="Texture2D" uid="uid://cshkrolh1fjn7" path="res://Assets/Asset Packs/Moon/Moon_Phases_64x64/Moon_Phase_3.png" id="24_3iu4m"]
@@ -109,7 +111,7 @@ half_moon_color = Color(0.34902, 0.333333, 0.47451, 1)
 first_quarter_moon_color = Color(0.25098, 0.239216, 0.376471, 1)
 new_moon_color = Color(0.156863, 0.14902, 0.298039, 1)
 
-[node name="PlayerSheet" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "gold_label", "sleep_label", "stats_container", "skill_container", "inventory_container")]
+[node name="PlayerSheet" type="NinePatchRect" parent="HBoxContainer" node_paths=PackedStringArray("name_label", "gold_container", "gold_label", "sleep_label", "stats_container", "skill_container", "inventory_container")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,11 +124,13 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("4_s8eqs")
 name_label = NodePath("MarginContainer/VBoxContainer/Panel/VBoxContainer/NameLabel")
+gold_container = NodePath("MarginContainer/VBoxContainer/Panel2/HBoxContainer/GoldContainer")
 gold_label = NodePath("MarginContainer/VBoxContainer/Panel2/HBoxContainer/GoldContainer/RichTextLabel")
 sleep_label = NodePath("MarginContainer/VBoxContainer/Panel2/HBoxContainer/HBoxContainer/RichTextLabel")
 stats_container = NodePath("MarginContainer/VBoxContainer/StatsContainer")
 skill_container = NodePath("MarginContainer/VBoxContainer/SkillScrollContainer/SkillContainer")
 inventory_container = NodePath("MarginContainer/VBoxContainer/InventoryScrollContainer")
+food_expense = ExtResource("13_2r0uj")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PlayerSheet"]
 layout_mode = 1
@@ -349,6 +353,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
+script = ExtResource("23_entp3")
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/PlayerSheet/MarginContainer/VBoxContainer/Panel2/HBoxContainer/GoldContainer"]
 custom_minimum_size = Vector2(40, 0)

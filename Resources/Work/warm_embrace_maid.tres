@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="WorkDefinition" load_steps=3 format=3 uid="uid://bu0vftwgycefa"]
 
 [ext_resource type="Resource" uid="uid://bsm4bdxi4bbwt" path="res://Dialogues/Work/warm_embrace_maid.dialogue" id="1_jppd5"]
-[ext_resource type="Script" uid="uid://b0n4oms6tlhej" path="res://Scripts/Definitions/work_definition.gd" id="1_l2ehs"]
+[ext_resource type="Script" uid="uid://b0n4oms6tlhej" path="res://Scripts/Definitions/Daily/work_definition.gd" id="1_l2ehs"]
 
 [resource]
 script = ExtResource("1_l2ehs")
-work_id = "warm_embrace_maid"
+id = "ens_inn"
 dialogue = ExtResource("1_jppd5")
 dialogue_start = "start"
+summary = "Maid (Warm Embrace)"
+amount = 10
 metadata/_custom_type_script = "uid://b0n4oms6tlhej"
